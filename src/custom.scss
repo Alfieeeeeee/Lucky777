@@ -1,0 +1,22 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+ /* 3. 讀入剩餘與必須的 bootstrap 變數 */
+@import "scss/bootstrap/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/maps";
+@import "/src/scss/bootstrap/_utilities";
+
+ /* 4. 讀入你要的 bootstrap component 或元件 */
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+
+// 載入heplers樣式
+@import "/src/scss/bootstrap/helpers";
+//  載入API
+@import "scss/bootstrap/utilities/api"
+
