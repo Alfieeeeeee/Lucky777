@@ -19,6 +19,10 @@ a:hover {
     text-decoration: none;
 }
 
+p{
+    margin: 0%;
+}
+
 h1,
 h2,
 h3,
@@ -350,7 +354,6 @@ section {
         padding: 0 3px;
         /* font-family: var(--font-secondary); */
         font-size: 16px;
-        font-weight: 600;
         color: rgba(0, 0, 0, 0.6);
         white-space: nowrap;
         transition: 0.3s;
@@ -366,11 +369,11 @@ section {
     .navbar>ul>li>a:before {
         content: "";
         position: absolute;
-        width: 100%;
+        object-position: center;
+        width: 60%;
         height: 2px;
         bottom: -6px;
-        left: 0;
-        background-color: black;
+        background-color: rgb(134, 60, 60);
         visibility: hidden;
         width: 0px;
         transition: all 0.3s ease-in-out 0s;
@@ -380,7 +383,7 @@ section {
     .navbar li:hover>a:before,
     .navbar .active:before {
         visibility: visible;
-        width: 100%;
+        width: 40%;
     }
 
     .navbar a:hover,
@@ -393,14 +396,14 @@ section {
     .navbar .dropdown ul {
         display: block;
         position: absolute;
-        left: 5px;
+        /* left: 5px; */
         /* top: 100%; */
         margin: 0;
-        padding: 30px 0;
+        padding: 0;
         z-index: 99;
         opacity: 0;
         visibility: hidden;
-        background: #fff;
+        background: #9e2828;
         /* box-shadow: 0px 0px 15px rgba(127, 137, 161, 0.25); */
         transition: 0.3s;
         border-radius: 4px;
@@ -414,8 +417,7 @@ section {
         padding: 10px 20px;
         font-size: 15px;
         text-transform: none;
-        font-weight: 600;
-        color: black;
+        color: rgb(255, 255, 255);
     }
 
     .navbar .dropdown ul a i {
@@ -426,6 +428,9 @@ section {
     .navbar .dropdown ul .active:hover,
     .navbar .dropdown ul li:hover>a {
         color: black;
+        background-color: white;
+        /* border: 1px solid #9e2828; */
+        border-radius: 4px;
     }
 
     .navbar .dropdown:hover>ul {
@@ -775,15 +780,6 @@ section {
 }
 
 /*  */
-
-.swiper_btn {
-    width: 65%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-
 .adopt_text_index {
     position: absolute;
     left: 0;
@@ -792,34 +788,34 @@ section {
     text-align: center;
 }
 
-.arrow-prev-icon,
-.arrow-next-icon {
+.card-new {
+    border: 1px solid black ;
+    border-radius: 10px;
+    padding: 2% ;
+}
+
+.card-body-new{
+    padding:1rem;
+}
+
+.square-img-container {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 100%;
+    /* Set height to 40% of the width */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.square-img {
     position: absolute;
-    top: 1rem;
-    width: 45px;
-    height: 45px;
-}
-
-.arrow-prev-icon {
-
+    top: 0;
     left: 0;
-    background-image: url("/image/svg/arrow-left-short.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.arrow-next-icon {
-    right: 0;
-    background-image: url("/image/svg/arrow-right-short.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.arrow-prev-icon:hover,
-.arrow-next-icon:hover {
-    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    /* Ensures the image covers the entire container without stretching */
 }
 
 
