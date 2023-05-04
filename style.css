@@ -303,9 +303,9 @@ Nav
     color: #151515;
 }
 
-.navbar-mobile .dropdown ul a i {
-    /* font-size: 12px; */
-}
+/* .navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+} */
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
@@ -483,4 +483,19 @@ section {
     object-fit: cover;
     object-position: top;
     /* Ensures the image covers the entire container without stretching */
+}
+
+
+/*  */
+
+.icon.-lineLink {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -6.93333vw;
+    margin: auto;
+    width: 10.66667vw;
+    height: 0.53333vw;
+    pointer-events: none;
+    fill: #221e1f;
 }
