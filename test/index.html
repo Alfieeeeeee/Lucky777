@@ -5,18 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="src/scss/bootstrap/bootstrap.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
-
-
-    <!-- <link rel="stylesheet" href="src/css/footers.css">
-    <link rel="stylesheet" href="src/css/features.css"> -->
+    <link rel="stylesheet" href="src/scss/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/footers.css">
+    <link rel="stylesheet" href="src/css/features.css">
 
     <script src="src/js/bootstrap.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -29,7 +24,7 @@
 
 <body>
     <!-- Header -->
-    <header class="container-fluid p-0 full-height">
+    <div class="container-fluid p-0 full-height">
         <div class="row g-0 full-height">
             <div class="col-md-4 d-none d-md-block">
                 <div class="image-container">
@@ -62,10 +57,14 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Nav -->
-    <div id="menubar" class="menubar">
+    <!-- <div>
+        <p class="keyVisual_title -blue font_AmaticSC">FurryFeast</p>
+        <p class="keyVisual_title -yellow font_AmaticSC">all about dogs and cats</p>
+    </div> -->
+
+    <div id="mainbar" class="fixed-bottom menubar">
         <div class="container d-flex align-items-center justify-content-lg-between">
 
             <h1 class="logo me-auto me-lg-0"><a href="index.html">Gp<span>.</span></a></h1>
@@ -96,8 +95,7 @@
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
-                <img src="/image/list.svg" alt="SVG Image" class="bi bi-list mobile-nav-toggle" />
-                <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
+                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
 
             <!-- .navbar -->
@@ -107,7 +105,97 @@
         </div>
     </div>
 
-    <!-- 浪浪區 -->
+    <!-- Nav -->
+    <!-- <div class="header d-flex align-items-center">
+        <div class="container-fluid">
+            <nav id="navbar" class="navbar ">
+                <ul class="nav d-flex justify-content-center">
+                    <li><a href="#about">最新消息</a></li>
+                    <li class="dropdown"><a href="#"><span>寵物商城</span></a>
+                        <ul>
+                            <li><a href="#">全台收容所查詢</a></li>
+                            <li><a href="#">糧食捐贈</a></li>
+                            <li><a href="#">走失通知</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>尋找浪浪</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="#">全台收容所查詢</a></li>
+                            <li><a href="#">糧食捐贈</a></li>
+                            <li><a href="#">走失通知</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>寵物鮮食</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="#">熱量計算</a></li>
+                            <li><a href="#">鮮食食譜</a></li>
+                            <li><a href="#">課程報名</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#portfolio">寵物友善地圖</a></li>
+                    <li><a href="#team">FAQ</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
+                <ul class="">
+                    <li><a href="">login</a></li>
+                    <li><a href="">login</a></li>
+                </ul>-->
+                <!-- btn -->
+                <!-- <button class="btn d-lg-none ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button> -->
+                <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+                </div>
+            </nav>
+        </div>
+    </div> -->
+
+    <!-- <nav class="navbar navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Offcanvas navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
+
+    <!--  -->
     <section id="testimonials" class="testimonials">
         <div class="container" data-aos="fade-up">
 
@@ -237,7 +325,40 @@
         </div>
     </section>
 
-    <div style="height: 2000px;"></div>
+    <!-- End Testimonials Section -->
+
+    <!-- contact -->
+    <section id="contact" class="contact d-flex ">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="section-header">
+                <h2>聯絡我們</h2>
+            </div>
+            <div>
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+            </div><!-- End Contact Form -->
+        </div>
+    </section>
 
     <!-- footer -->
     <footer class="footer mt-auto bg-light">
@@ -252,10 +373,11 @@
         </div>
     </footer>
 
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
 </body>
 <script>
     $(document).ready(function() {
-        var navbar = $("#menubar");
+        var navbar = $(".header");
         var footer = $(".footer");
         var navbarOffset = navbar.offset().top;
 
@@ -281,3 +403,15 @@
 <script src="/src/js/swiper.js"></script>
 
 </html>
+
+<!-- cart icon -->
+<!-- <a href="https://www.example.com" style="position: relative;">
+    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary">
+        <i class="bi bi-heart-fill"></i>
+    </span>
+    <img src="/image/svg/cart4.svg" alt="Your SVG Image" width="40" height="40">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        99+
+        <span class="visually-hidden">unread messages</span>
+    </span>
+</a> -->
