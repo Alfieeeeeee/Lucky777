@@ -18,20 +18,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <!-- google font -->
+    <!-- google -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Anton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Noto+Sans+TC:wght@700&display=swap');
     </style>
 
     <link rel="stylesheet" href="/style.css">
 
-    <title>FurryFeast</title>
+    <title>Furry Feast (◍•ᴗ•◍) 毛絨絨の盛宴</title>
 </head>
 
 <body>
     <!-- Header -->
 
-    <header class="container-fluid p-0 full-height">
+    <header class="container-fluid p-0 full-height" data-aos="fade-up">
         <div class="row g-0 full-height">
             <div class="col-md-4 d-none d-md-block">
                 <div class="image-container">
@@ -66,16 +66,21 @@
         </div>
     </header>
 
+    <div class="row justify-content-center header-text" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+            <p>FurryFeast</p>
+            <p>all about dogs n cats.</p>
+        </div>
+    </div>
+
     <!-- Nav -->
-    <div id="menubar" class="menubar">
+    <div id="menubar" class="menubar shadow-sm">
         <div class="container d-flex align-items-center justify-content-lg-between">
-
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">Gp<span>.</span></a></h1>
-
+            <p class="logo me-auto me-lg-0"></p>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto " href="#hero">最新消息</a></li>
-                    <li class="dropdown"><a href="#"><span>寵物商城</span></a>
+                    <li class="dropdown"><a href="#"><span>寵物商城</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>
                             <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -92,16 +97,16 @@
                             <li><a href="#">Drop Down 4</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>尋找浪浪</span></a>
+                    <li class="dropdown"><a href="#"><span>尋找浪浪</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">全台動物收容所</a></li>
                             <li><a href="#">糧食捐贈</a></li>
                             <li><a href="#">走失公告</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>寵物鮮食</span></a>
+                    <li class="dropdown"><a href="#"><span>寵物鮮食</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li class="dropdown"><a href="#"><span>鮮食食譜</span></a>
+                            <li class="dropdown"><a href="#"><span>鮮食食譜</span><i class="bi bi-chevron-right"></i></a>
                                 <ul>
                                     <li><a href="#">Dog</a></li>
                                     <li><a href="#">Cat</a></li>
@@ -114,17 +119,31 @@
                     <li><a class="nav-link scrollto" href="#team">寵物友善地圖</a></li>
                     <li><a class="nav-link scrollto" href="#contact">聯絡我們</a></li>
                 </ul>
-                <!-- <button id="btn" class="btn btn-dark mobile-nav-toggle">Click Me!</button> -->
+                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
 
             <!-- navbar-login -->
-            <nav>
-                <a href="#about" style="padding:10px">login</a>
-                <a href="#about" style="padding:10px">cart</a>
+            <nav class="p-1">
+                <button id="btn" class="btn btn-dark"><i class="bi bi-person-circle"></i></button>
+                <button id="btn" class="btn btn-dark"><i class="bi bi-cart"></i></button>
             </nav>
 
         </div>
     </div>
+
+
+    <section id="" class="">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header  ">
+                <h2>最新消息</h2>
+            </div>
+            <div class="" data-aos="fade-up" data-aos-delay="100">
+                <div class="">
+                </div><!-- End testimonial item -->
+            </div>
+        </div>
+
+    </section>
 
     <!-- 浪浪區 -->
     <section id="testimonials" class="testimonials">
@@ -243,21 +262,21 @@
                                         <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-
                                 </div>
                             </div>
                         </div>
                     </div><!-- End testimonial item -->
-
                 </div>
-
             </div>
-
         </div>
     </section>
-
-    <div style="height: 2000px;"><i class="bi bi-0-circle-fill"></i></div>
-
+    <div id="btn" class="container-fluid" style="text-align: center;">
+        <i class="bi bi-three-dots"></i>
+        <div class="btn btn-lg border-dark border-3 rounded-pill index_btn">
+            <a href="http://">找尋更多浪浪 </a><i class="bi bi-box-arrow-up-right"></i></div>
+        <i class="bi bi-three-dots"></i>
+        <div style="height: 2000px;"></div>
+    </div>
 
     <!-- footer -->
     <footer class="footer mt-auto bg-light">
@@ -279,32 +298,52 @@
     <!--  bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-</body>
-<script>
-    $(document).ready(function() {
-        var navbar = $("#menubar");
-        var footer = $(".footer");
-        var navbarOffset = navbar.offset().top;
 
-        $(window).scroll(function() {
-            if ($(window).scrollTop() < navbarOffset) {
-                navbar.removeClass("sticky-top");
-                navbar.addClass("sticky-bottom");
-            } else {
-                navbar.removeClass("sticky-bottom");
-                navbar.addClass("sticky-top");
-            }
+    <script src="/src/js/swiper.js"></script>
+
+    <script>
+        // mobile navbar
+        document.querySelector('.mobile-nav-toggle').addEventListener('click', function(e) {
+            document.querySelector('.navbar').classList.toggle('navbar-mobile');
+            this.classList.toggle('bi-list');
+            this.classList.toggle('bi-x');
         });
 
-        $(window).scroll(function() {
-            if ($(window).scrollTop() < navbarOffset / 2) {
-                footer.removeClass("fixed-bottom")
-            } else {
-                footer.addClass("fixed-bottom")
-            }
-        })
-    });
-</script>
+        document.querySelectorAll('.navbar .dropdown > a').forEach(function(dropdownToggle) {
+            dropdownToggle.addEventListener('click', function(e) {
+                if (document.querySelector('#navbar').classList.contains('navbar-mobile')) {
+                    e.preventDefault();
+                    this.nextElementSibling.classList.toggle('dropdown-active');
+                }
+            });
+        });
+
+        // navbar position
+        $(document).ready(function() {
+            var navbar = $("#menubar");
+            var footer = $(".footer");
+            var navbarOffset = navbar.offset().top;
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() < navbarOffset) {
+                    navbar.removeClass("sticky-top");
+                    navbar.addClass("sticky-bottom");
+                } else {
+                    navbar.removeClass("sticky-bottom");
+                    navbar.addClass("sticky-top");
+                }
+            });
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() < navbarOffset / 2) {
+                    footer.removeClass("fixed-bottom")
+                } else {
+                    footer.addClass("fixed-bottom")
+                }
+            })
+        });
+    </script>
+</body>
 <script src="/src/js/swiper.js"></script>
 
 </html>
