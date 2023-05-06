@@ -34,11 +34,30 @@ h6 {
     font-weight: 600;
 }
 
+/* float icon */
+
+.fixed-icon {
+    position: fixed;
+    opacity: 0.5;
+    bottom: 50px;
+    /* Adjust this value to change the distance from the bottom of the viewport */
+    right: 50px;
+    /* Adjust this value to change the distance from the right side of the viewport */
+    z-index: 9999;
+    /* Ensure the icon stays on top of other elements */
+}
+
 /*  */
 
 .square {
-    aspect-ratio: 1 / 1;
-    background-color: lightblue;
+    aspect-ratio: 1.5 / 1;
+}
+
+
+
+.container-custom {
+    width: 50%;
+    margin: auto;
 }
 
 /* swiper */
