@@ -169,8 +169,8 @@ Nav
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 10px 30px;
-    /* font-size: 25px; */
+    padding: 10px 20px 10px 20px;
+    font-size: 15px;
     color: black;
     white-space: nowrap;
     transition: 0.3s;
