@@ -1,0 +1,85 @@
+/** @section Posts */
+
+.post {
+	.post-figure {
+		display: block;
+		> img {
+			width: 100%;
+		}
+	}
+	.post-meta {
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+	}
+
+	.post-title { margin-top: 13px; }
+	.post-comments {
+		color: $gray-1;
+		padding-left: 1.5em;
+	}
+}
+
+.post-line {
+	display: block;
+
+	.post-body {
+		margin-top: 30px;
+	}
+	@include media-breakpoint-up(md) {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.post-figure {
+			flex: 0 0 40%;
+			max-width: 40%;
+		}
+		.post-body {
+			flex: 0 0 60%;
+			max-width: 60%;
+			margin-top: 0;
+			padding-left: 50px;
+		}
+	}
+}
+.post-meta-title {
+	margin-bottom: 10px;
+}
+
+.post-quote {
+	margin-top: 30px;
+	flex-wrap: wrap;
+}
+
+.post-meta-tags {
+	margin-top: 30px;
+	@include media-breakpoint-up(md) {
+		margin-top: 60px;
+	}
+}
+
+.post-tag {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding: 5px 20px;
+	border-radius: 20px;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: $font-family-sec;
+	line-height: 29px;
+	background-color: $primary-light;
+	color: $primary;
+}
+.post-tag.active, .post-tag:hover {
+	background-color: $primary;
+	transition: $transition-base;
+	> a{
+		color: $white;
+	}
+}
+
+.post-bottom {
+
+}

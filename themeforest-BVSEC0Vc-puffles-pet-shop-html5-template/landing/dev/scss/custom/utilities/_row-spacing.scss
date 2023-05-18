@@ -1,0 +1,43 @@
+/** @section Row spacing */
+
+.row-0 {
+	@include grid-offset(0px);
+}
+
+.row-15 {
+	@include grid-offset(15px);
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-40 {
+	@include grid-offset(40px);
+}
+
+@include media-breakpoint-up( md ) {
+	.row-md-50 {
+		@include grid-offset(50px);
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.row-lg-52 {
+		@include grid-offset(52px);
+	}
+
+	.row-lg-70 {
+		@include grid-offset(70px);
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.row-xxl-140 {
+		@include grid-offset(140px);
+	}
+}

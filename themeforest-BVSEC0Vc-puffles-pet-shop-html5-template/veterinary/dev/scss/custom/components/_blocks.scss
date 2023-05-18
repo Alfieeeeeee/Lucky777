@@ -1,0 +1,69 @@
+/** @section Blocks */
+
+%block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// The block element can be centered horizontally
+//
+.block-center {
+	@extend %block-center;
+}
+
+// Limits block width and block element can be centered horizontally
+//
+.block-sm {
+	@extend %block-center;
+	max-width: 280px;
+	@include media-breakpoint-up(sm) {
+		max-width: 100%;
+	}
+}
+
+.block-md {
+	@extend %block-center;
+	max-width: 390px;
+}
+
+.block-lg {
+	@extend %block-center;
+	max-width: 768px;
+}
+
+// Block center
+.block-center {
+	&:hover {
+		.block-center-header {
+			background-color: $primary;
+		}
+	}
+}
+
+.block-center-inner {
+}
+
+.block-center-inner-aside {
+}
+
+.block-center-inner-main {
+}
+
+.block-center-title {
+	background-color: $white;
+}
+
+@include media-breakpoint-down(xl) {
+	.block-center {
+
+		&:hover {
+			.block-center-header {
+				background-color: $white;
+			}
+		}
+	}
+
+	.block-center-header {
+		background-color: $primary;
+	}
+}

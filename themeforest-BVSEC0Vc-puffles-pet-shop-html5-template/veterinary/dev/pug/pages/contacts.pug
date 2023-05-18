@@ -1,0 +1,57 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/team
+
+block variables
+    - pageName = 'Contacts';
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-lg-6.text-center
+                    h2.h3 Contacts
+                    p.lead Ultricies nullam arcu consectetur suspendisse nisl. Amet nulla nibh tellus morbi libero, morbi sed.
+
+    //Main
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-30.row-xl-50
+                .col-md-6.col-xl-4
+                    h3.h4.text-primary Give us a call
+                    .h3: a(href= "#") (+844) 123 456 78
+                    h3.h4.text-primary Address:
+                    p.lead 178 West 27th Street, Suite 527, New York NY 10012
+                    h3.h4.text-primary Opening hours
+                    p.lead 9 am to 5 pm on weekdays 10 am to 2 pm on Saturday
+                .col-md-6.col-xl-7.offset-xl-1
+                    h3.h4.text-primary Do you have a question?
+                    h4.h3 Fell free to contact us anytime:
+                    form.rd-form.rd-mailform.form-contact(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                        .row.row-20
+                            .col-12: .form-wrap
+                                label.form-label(for='contact-message-2') Your message *
+                                textarea#contact-message-2.form-input.textarea-lg(name='phone' data-constraints='@Required')
+
+                            .col-12: .form-wrap
+                                input#contact-first-name-2.form-input(type='text' name='name' data-constraints='@Required')
+                                label.form-label(for='contact-first-name-2') Your name *
+
+                            .col-12: .form-wrap
+                                input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                                label.form-label(for='contact-email') Your email *
+
+
+                        button.btn.btn-primary.btn-circle(type='submit') Submit comment
+
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

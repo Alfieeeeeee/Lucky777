@@ -1,0 +1,32 @@
+/** @section Services */
+
+.service {
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+}
+
+.service-image {
+  border-radius: 8px 8px 0 0;
+}
+
+.service-body {
+  padding: 25px;
+  background-color: $white;
+  border-radius: 0 0 8px 8px;
+}
+
+* + .service-text {
+  font-family: $font-family-sec;
+  margin-top: 13px ;
+}
+
+@include media-breakpoint-up(xl) {
+  .service-body {
+    padding: 20px 25px 25px 25px;
+  }
+}
+@include media-breakpoint-up(xxl) {
+  .service-body {
+    padding: 27px 35px 40px 40px;
+  }
+}

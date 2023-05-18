@@ -1,0 +1,41 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+
+block variables
+    - pageName = 'Search Results'
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-md-8.text-center
+                    h2.h3.text-primary Search Results
+                    p.lead Sed mattis felis fringilla tortor vulputate ut erat risus praesent. In ut habitant bibendum tellus. Donec volutpat sed at eu nibh.
+
+
+    //Search results
+    section.section-md
+        .container
+            .row.justify-content-center
+                .col-lg-6
+                    //RD Search
+                    form.rd-form.rd-search.rd-form-inline(action='search-results.html' method='GET')
+                        .form-wrap
+                            label.form-label(for='rd-search-form-input') Enter your search request
+                            input.form-input(id='rd-search-form-input' type='text' name='s' autocomplete='off')
+                        .form-wrap.form-button
+                            button.btn.btn-primary.btn-circle(type='submit') Search
+
+                    .rd-search-results
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

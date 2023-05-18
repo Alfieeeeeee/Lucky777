@@ -1,0 +1,143 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-product
+include ../components/_ui-pagination
+include ../components/_ui-box-comment
+include ../includes/_contact-form
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'shop'
+	- var pageName = 'Single Product'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Single Product
+	section.section.section-sm.section-first.bg-default
+		.container
+			.row.row-30
+				.col-lg-6
+					.slick-vertical.slick-product
+						// Slick Carousel
+						#carousel-parent.slick-slider.carousel-parent( data-items='1' data-swipe='true' data-child='#child-carousel' data-for='#child-carousel' )
+							.item: .slick-product-figure: +img('single-product-1-530x480')
+							.item: .slick-product-figure: +img('single-product-2-530x480')
+							.item: .slick-product-figure: +img('single-product-3-530x480')
+
+						#child-carousel.slick-slider.child-carousel.slick-nav-1( data-arrows='true' data-items='3' data-sm-items='3' data-md-items='3' data-lg-items='3' data-xl-items='3' data-xxl-items='3' data-md-vertical='true' data-for='#carousel-parent' )
+							.item: .slick-product-figure: +img('single-product-1-530x480')
+							.item: .slick-product-figure: +img('single-product-2-530x480')
+							.item: .slick-product-figure: +img('single-product-3-530x480')
+
+				.col-lg-6
+					.single-product
+						h3.text-transform-none.fw-medium PAPER FAN
+						.group-md.group-middle
+							.single-product-price $11
+							.single-product-rating
+								span.icon.mdi.mdi-star
+								span.icon.mdi.mdi-star
+								span.icon.mdi.mdi-star
+								span.icon.mdi.mdi-star
+								span.icon.mdi.mdi-star-half
+						p Lorem ipsum dolor sit amet, ei impetus epicurei his, ne falli erant consequuntur est. Mei simul aperiam eu, an rebum regione ponderum mel. Facer placerat ut duo, id duis solum maiorum vis, vim autemsemper docendi cu. Pro
+						hr.hr-gray-100
+						ul.list.list-description
+							li
+								span Categories:
+								span Gifts
+							li
+								span Weight:
+								span  0,44 lbs
+							li
+								span Size:
+								span 60 x 60 x 90 cm
+						.group-xs.group-middle
+							div.product-stepper: input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+							div: a.button.button-lg.button-secondary.button-zakaria(href='cart-page.html') Add to cart
+						hr.hr-gray-100
+						.group-xs.group-middle
+							span.list-social-title Share
+							div: +widget-list([], '', 'list-social list-inline-sm')
+			// Bootstrap tabs
+			#tabs-1.tabs-custom.tabs-horizontal.tabs-line
+				// Nav tabs
+				.nav-tabs-wrap: ul.nav.nav-tabs.nav-tabs-1.single-product-tabs
+					li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-bs-toggle='tab') Reviews
+					li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-bs-toggle='tab') Additional information
+					li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-3' data-bs-toggle='tab') Delivery and payment
+
+				// Tab panes
+				.tab-content.tab-content-1
+					div#tabs-1-1.tab-pane.fade.show.active
+						+box-comment({
+							productComments: true,
+							unit: 'unit-spacing-md',
+							img: 'user-1-119x119',
+							author: 'Jane Doe',
+							text: 'Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.',
+							time: {
+								datetime: '2020-11-30',
+								dateText: 'Nov 30, 2020'
+							}
+						})
+
+						h4.text-transform-none.fw-medium Leave a Review
+						+contact-form-2({ buttonText: 'Submit' })
+
+					div#tabs-1-2.tab-pane.fade
+						.single-product-info: .unit.unit-spacing-md.flex-column.flex-sm-row.align-items-sm-center
+							.unit-left: span.icon.icon-80.mdi.mdi-information-outline
+							.unit-body
+								p Et malesuada fames ac turpis egestas. Viverra vitae congue eu consequat ac felis. Habitant morbi tristique senectus et. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Varius sit amet mattis vulputate enim nulla. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Facilisi morbi tempus iaculis urna id volutpat lacus.
+
+					div#tabs-1-3.tab-pane.fade
+						.single-product-info: .unit.unit-spacing-md.flex-column.flex-sm-row.align-items-sm-center
+							.unit-left: span.icon.icon-80.mdi.mdi-truck-delivery
+							.unit-body
+								p Placerat orci nulla pellentesque dignissim. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Non nisi est sit amet. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Eget duis at tellus at urna. Magna fringilla urna porttitor rhoncus dolor.
+
+	// Related Products
+	section.section.section-sm.section-last.bg-gray-1
+		.container
+			h4.fw-sbold Featured Products
+			.row.row-lg.row-30.row-lg-50.justify-content-center
+				.col-sm-6.col-md-5.col-lg-3
+					+product({
+						img:      'product-01-200x200',
+						title:    'Deep Dish Cuddler',
+						price:    '23',
+						priceOld: '30'
+					})
+				.col-sm-6.col-md-5.col-lg-3
+					+product({
+						img:   'product-02-200x200',
+						title: 'Zoo Fun Dog Collars',
+						price: '11'
+					})
+				.col-sm-6.col-md-5.col-lg-3
+					+product({
+						img:   'product-03-200x200',
+						title: 'Glendan Dog Brush',
+						price: '17',
+						new:   'true'
+					})
+				.col-sm-6.col-md-5.col-lg-3
+					+product({
+						img:   'product-04-200x200',
+						title: 'Pet Food Bowl',
+						price: '12'
+					})
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

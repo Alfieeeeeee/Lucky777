@@ -1,0 +1,54 @@
+.row.row-xl.row-30.justify-content-center
+	.col-sm-6.col-lg-4
+		+pricing-classic({
+			title: 'Basic',
+			price: '400',
+			bgColor: 'bg-secondary',
+			from: true
+		})
+			ul.pricing-classic-list
+				li
+					span Pet Food
+				li
+					span Basic Grooming
+				li
+					span Toys for pets
+				li
+					span Veterinary care
+
+	.col-sm-6.col-lg-4
+		+pricing-classic({
+			mod: 'pricing-classic-sale',
+			title: 'Standard',
+			price: '600',
+			priceOld: '1,000',
+			bgColor: 'bg-primary',
+			tagColor: 'bg-secondary',
+			btnClass: 'button-primary'
+		})
+			ul.pricing-classic-list
+				li
+					span Dog daycare
+				li
+					span Group training
+				li
+					span Adoption
+				li
+					span Dog clothing
+
+	.col-sm-6.col-lg-4
+		+pricing-classic({
+			title: 'Premium',
+			price: '800',
+			bgColor: 'bg-secondary'
+
+		})
+			ul.pricing-classic-list
+				li
+					span Hotel for pets
+				li
+					span Pet insurance
+				li
+					span In-home training
+				li
+					span Premium Grooming

@@ -1,0 +1,197 @@
+/** @section Lists */
+
+// Vertical list
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-xs > li + li {
+	margin-top: 5px;
+}
+
+.list-sm > li + li {
+	margin-top: 10px;
+}
+
+.list-md > li + li {
+	margin-top: 10px;
+	@include media-breakpoint-up(md) {
+		margin-top: 18px;
+	}
+}
+
+.list-lg > li + li {
+	margin-top: 25px;
+}
+
+.list-xl > li + li {
+	margin-top: 30px;
+}
+
+@include media-breakpoint-up(md) {
+	.list-xl > li + li {
+		margin-top: 60px;
+	}
+}
+
+
+// List inline
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}
+
+html {
+	.list-inline-md {
+		@include spacing(20px, 8px);
+
+		@include media-breakpoint-up(lg) {
+			@include spacingX(30px);
+		}
+	}
+}
+
+
+// List terms
+.list-terms {
+	* + & {
+		margin-top: 30px;
+	}
+
+	& + * {
+		margin-top: 30px;
+	}
+
+	dt + dd {
+		margin-top: 15px;
+	}
+
+	dd + dt {
+		margin-top: 45px;
+	}
+}
+
+
+// Index list
+.index-list {
+	counter-reset: li;
+
+	> li {
+		.list-index-counter {
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+	}
+}
+
+
+// Marked list
+.list-marked {
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&::before {
+			position: absolute;
+			display: inline-block;
+			left: 0;
+			top: 1px;
+			min-width: 25px;
+			content: '\f105';
+			font: 400 14px/24px 'FontAwesome';
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 4px;
+	}
+}
+
+* + .list-marked {
+	margin-top: 15px;
+}
+
+p + .list-marked {
+	margin-top: 10px;
+}
+
+
+// Ordered List
+.list-ordered {
+	counter-reset: li;
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&:before {
+			position: absolute;
+			content: counter(li, decimal) '.';
+			counter-increment: li;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 15px;
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+* + .list-ordered {
+	margin-top: 15px;
+}
+
+
+// Lead list
+
+.list-lead {
+	> li:before {
+		content: '- ';
+	}
+
+	> li + li {
+		margin-top: 0px;
+	}
+
+	h3 + &, .h3 + & {
+		margin-top: 24px;
+	}
+}
+
+// Checked list
+.list-checked > li{
+
+	&::before {
+		content: '\f222';
+		margin-right: 20px;
+		font-family: 'Material Design Icons';
+		color: $primary;
+	}
+}
+
+
+// List social
+.list-social {
+	@include group(25px, 10px);
+}
+
+.list-social-item {
+	display: inline-block;
+
+	> * {
+		vertical-align: middle;
+	}
+}

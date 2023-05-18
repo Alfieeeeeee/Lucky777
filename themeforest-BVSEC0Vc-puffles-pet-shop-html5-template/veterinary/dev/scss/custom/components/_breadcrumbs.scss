@@ -1,0 +1,92 @@
+/** @section Breadcrumbs */
+
+// Local variables
+$breadcrumb-padding-vertical: 10px;
+$breadcrumb-padding-horizontal: 0px;
+$breadcrumb-bg: $white;
+$breadcrumb-color: $body-color ;
+$breadcrumb-active-color: $primary;
+$breadcrumb-separator: "|";
+
+// Base styles
+.breadcrumbs-custom {
+	position: relative;
+	padding: 0 $breadcrumb-padding-horizontal $breadcrumb-padding-vertical;
+	text-align: left;
+	background-color: $breadcrumb-bg;
+	background-position: center;
+}
+
+.breadcrumbs-custom-path {
+	@include spacingX(10px);
+
+	a {
+		display: inline;
+		vertical-align: middle;
+		&,
+		&:active,
+		&:focus {
+			color: $breadcrumb-color;
+		}
+	}
+
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 10px;
+		line-height: 1.7;
+
+		&::after {
+			content: $breadcrumb-separator;
+			font-family: 'FontAwesome';
+			position: absolute;
+			top: 52%;
+			right: -5px;
+			display: inline-block;
+			font-size: inherit;
+			font-style: normal;
+			line-height: 1;
+			color: $body-color;
+			transform: translate3d(0, -50%, 0);
+		}
+	}
+
+	li:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
+	a:hover,
+	li.active {
+		color: $breadcrumb-active-color;
+	}
+
+	li.active {
+
+	}
+}
+
+* + .breadcrumbs-custom-path {
+	margin-top: 14px;
+}
+
+@include media-breakpoint-down(md) {
+	.breadcrumbs-custom-title {
+		font-size: 26px;
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.breadcrumbs-custom {
+		@include spacingX(60px);
+	}
+
+	* + .breadcrumbs-custom-path {
+		margin-top: 18px;
+	}
+}
+
+
+

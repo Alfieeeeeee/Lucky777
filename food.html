@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5 css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <!-- 引入 Bootstrap Icons CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwGI7BGNrDL_AtaZNvS9jHWweUj1IJsT0&callback=initMap&libraries=maps,marker&v=beta"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="index-header">
+        <h2>寵物鮮食食譜</h2>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <button class="col btn btn-primary p-5 " type="button" id="Btn_DogCal">Dog</button>
+            <button class="col btn btn-primary p-5 ms-3" type="button" id="Btn_DogCat">Cat</button>
+        </div>
+        <div class="row m-4">
+            <div class="col-md-3 border border-2 rounded-4 pt-4">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                    <li class="nav-item"><a href="">
+                            <h5>義式番茄糙米燉飯</h5>
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="col p-3 ms-3 border border-2 rounded-4">
+                <div class="row">
+                    <!-- <div class="col">
+                        <img src="/image/cat/1682729697786.png" class="border border-0" style="position: relative; max-width: 100%; border-radius: 1rem; padding: 1rem;" alt="...">
+                    </div> -->
+                    <div class="row justify-content-center header-text" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-xl-6 col-lg-8">
+                            <p>FurryFeast</p>
+                            <p style="position: absolute; bottom: 4rem; text-align: center; color: white;opacity: 0.5;">義式番茄糙米燉飯.</p>
+                        </div>
+                    </div>
+                    <div class="my-4 text-center" style="font-size:30px;">義式番茄糙米燉飯</div>
+                </div>
+                <div class="row m-3">
+                    <div class="col border border-2  p-4 rounded-4">
+                        <h5>準備食材</h5>
+                        <ul class="">
+                            <li class=""><span class="">糙米</span><span class="">已經煮熟的</span></li>
+                            <li class=""><span class="">番茄罐頭或新鮮番茄</span><span class="">牛番茄較適合炒菜用</span></li>
+                            <li class=""><span class="">南瓜</span></li>
+                            <li class=""><span class="">舞菇或其他菇類</span></li>
+                            <li class=""><span class="">洋香菜</span></li>
+                            <li class=""><span class="">雞胸肉</span><span class="">油脂較低</span></li>
+                            <li class=""><span class="">橄欖油</span></li>
+                        </ul>
+                    </div>
+                    <div class="col border border-2 ms-4 p-4 rounded-4">
+                        <h5>作法</h5>
+                        <ol>
+                            <li>將蔬菜、雞肉等食材切小塊使狗狗容易入口</li>
+                            <li>加入少許橄欖油至炒鍋</li>
+                            <li>待橄欖油熱後把食材加入炒熟</li>
+                            <li>將糙米飯倒入鍋中，並加水至稍微蓋過食材</li>
+                            <li>燉煮一段時間即可以裝盤並撒上洋香菜</li>
+                            <li>待食物稍微放涼在給狗狗吃，以防剛起鍋食物很燙</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col border border-2 rounded-4 p-4">
+                        <h5>Notes</h5>
+                        <span>寵物鮮食食譜僅提供參考，考量到每隻狗狗品種、年紀等等狀況不一樣，不提供份量計算，狗奴才需自行斟酌。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <h2 class="index-header">留言板</h2>
+        <div class="border border-2 m-4 p-4">
+            <p>您尚未登入會員</p>
+            <a href="#"><button class="btn btn-dark" type="button">登入會員</button></a>
+        </div>
+    </div>
+    <div class="container mt-0">
+        <div class="border border-2 p-3 position-relative m-4" style="font-size: 20px;">
+            <span class="col" style="position: absolute; left: 10px;">UserName</span>
+            <span style="position: absolute; right:10px;">PostTime:2023/05/14</span>
+            <button class="btn btn-dark" type="button">edit</button>
+            <button class="btn btn-danger" type="button">delete</button>
+        </div>
+        <div class="position-relative border border-2 rounded-4 p-4 m-4" style="height: 200px;">
+            <p>內容</p>
+            <div class="position-absolute" style="right: 20px; bottom:10px;">
+                <a style="color:gray;" href="http://">已編輯</a>
+            </div>
+        </div>
+    </div>
+</body>
+<!--  bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+</html>

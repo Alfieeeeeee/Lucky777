@@ -1,0 +1,95 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg( name ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Png image
+	@param {string} name
+mixin png( name )
+	- var size = getImageSize( name );
+	img( src= procImg( name +'.png' ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+		block
+
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.section.parallax-container( data-parallax-img= procImg( obj.img ) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+
+//- Breadcrumbs
+	@param {object} obj - parameters storage
+	@param {string} obj.category - required menu category
+	@param {string} obj.bgImage - section background image
+	@param {array}  obj.path - other navigation path
+mixin breadcrumbs( obj )
+	- var activeItemName= obj.path.pop();
+	- var category = getMenuCategory( obj.category );
+
+	section.breadcrumbs-custom
+		.parallax-container( data-parallax-img= procImg( obj.bgImage ) )
+			.breadcrumbs-custom-body.parallax-content.context-dark
+				.container
+					h2.breadcrumbs-custom-title= activeItemName
+					if( obj.text )
+						h5.breadcrumbs-custom-text!= obj.text
+		.breadcrumbs-custom-footer: .container
+			ul.breadcrumbs-custom-path
+				li: a(href='index.html') Home
+				if ( typeof( category ) !== 'undefined' && ( category.title !== activeItemName ) )
+					li: a( href=category.link ? category.link : genLink( category.title ) )= category.title
+					-for( var i = 0; i < obj.path.length; i++)
+						li: a( href=obj.path[i].link ? obj.path[i].link : genLink( obj.path[i].title) )= obj.path[i].title
+
+				li.active=activeItemName
+
+
+//- Logo
+mixin logo
+	a.brand( href='index.html' )&attributes( attributes )
+		+img( logo.default, {retina: true} ).brand-logo-dark
+
+
+//- Copyright
+mixin rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp;
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span . All Rights Reserved.&nbsp;
+		a( href='privacy-policy.html' ) Privacy Policy
+
+
+//- Social List Widget
+//- socials - an array of {link}
+//- iclass - icon class
+//- lclass - list class
+
+mixin widget-list(socials, iclass, lclass)
+	- var iclass = iclass ? " " + iclass : " icon-xxs"
+	- var lclass = lclass
+
+	ul.list-inline(class=lclass)
+		if(socials.length)
+			each link in socials
+				li: a(href=link.href class=link.icon + iclass)
+		else
+			li: a( href='#' class='icon mdi mdi-facebook' )
+			li: a( href='#' class='icon mdi mdi-twitter' )
+			li: a( href='#' class='icon mdi mdi-instagram' )
+			li: a( href='#' class='icon mdi mdi-google-plus' )

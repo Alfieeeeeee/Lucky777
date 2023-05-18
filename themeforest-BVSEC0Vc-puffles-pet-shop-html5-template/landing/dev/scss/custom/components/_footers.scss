@@ -1,0 +1,18 @@
+/** @section Footers */
+
+// Footer Classic
+.footer-classic {
+	padding: 140px 0 40px;
+}
+
+@include media-breakpoint-up(lg) {
+	.footer-classic {
+		padding: 200px 0 80px;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.footer-classic {
+		padding: 414px 0 160px;
+	}
+}

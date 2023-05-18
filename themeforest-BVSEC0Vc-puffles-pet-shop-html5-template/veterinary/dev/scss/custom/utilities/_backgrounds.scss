@@ -1,0 +1,119 @@
+/** @section Backgrounds */
+
+// Mixins
+@mixin bg-adjacent() {
+	&:not([style*='background-']) + &:not([style*='background-']) {
+		padding-top: 0;
+	}
+}
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+
+// Light Backgrounds
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+.bg-primary-light {
+	@include bg-behaviour($primary-light);
+}
+
+// Dark Backgrounds
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+
+// Accent Backgrounds
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+// Transparent background
+.bg-transparent {
+	@include bg-adjacent();
+}
+
+// Background Image
+.bg-image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+// Background layer
+.bg-layer {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+// Overlat
+.bg-overlay {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba( $white, .8 );
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+
+	* > {
+		position: relative;
+	}
+}
+
+// Desktop only
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}

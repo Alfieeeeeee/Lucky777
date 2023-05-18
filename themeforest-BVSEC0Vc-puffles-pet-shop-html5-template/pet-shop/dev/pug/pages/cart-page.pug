@@ -1,0 +1,41 @@
+extends  ../_skeleton
+include ../sections/_header-modern
+
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'shop'
+	- var pageName = 'Cart Page'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Shopping Cart
+	section.section.section-xl.bg-default
+		.container
+			// shopping-cart
+			include ../includes/_shopping-cart
+			.group-xl.group-justify.justify-content-center.justify-content-md-between
+				div: form.rd-form.rd-mailform.rd-form-inline.rd-form-coupon
+					.form-wrap
+						input.form-input.form-input-inverse(id="coupon-code" type="text" name="text")
+						label.form-label(for="coupon-code") Coupon code
+					.form-button: button.button.button-lg.button-primary.button-zakaria(type="submit") Apply
+				div: .group-xl.group-middle
+					div: .group-md.group-middle
+						.heading-5.fw-medium.text-gray-500 Total
+						.heading-3.fw-normal $34
+					a.button.button-lg.button-primary.button-zakaria(href='checkout.html') Proceed to checkout
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

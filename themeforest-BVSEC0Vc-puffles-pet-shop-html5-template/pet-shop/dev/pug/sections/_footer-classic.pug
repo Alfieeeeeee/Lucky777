@@ -1,0 +1,65 @@
+mixin footer-classic( obj )
+	- obj = obj || {};
+
+	footer.section.footer-classic( class= obj.mod )
+		.footer-classic-body.section-lg( class= obj.bodyMod )
+			.container
+				.row.row-40.row-md-50.justify-content-xl-between
+					.col-sm-6.col-lg-4.col-xl-3.wow.fadeInRight
+						.footer-classic-brand: +logo
+						ul.list-schedule
+							li
+								span Weekdays:
+								span 08:00am - 08:00pm
+							li
+								span Weekends:
+								span 10:00am - 06:00pm
+
+						.footer-classic-social: .group-lg.group-middle
+							p Get Social
+							div: +widget-list([], '', 'list-social list-inline-sm')
+
+					.col-sm-6.col-lg-4.col-xl-3.wow.fadeInRight( data-wow-delay='.1s' )
+						h4.footer-classic-title Contacts
+						ul.contacts-creative
+							li: .unit.unit-spacing-sm.flex-column.flex-md-row
+								.unit-left: span.icon.mdi.mdi-map-marker
+								.unit-body
+									a( href='#' ) 523 Sylvan Ave, 5th Floor
+										br
+										| Mountain View, CA 94041 USA
+
+							li: .unit.unit-spacing-sm.flex-column.flex-md-row
+								.unit-left: span.icon.mdi.mdi-phone
+								.unit-body
+									a(href='tel:#') +1 (844) 123 456 78
+
+							li: .unit.unit-spacing-sm.flex-column.flex-md-row
+								.unit-left: span.icon.mdi.mdi-email-outline
+								.unit-body
+									a(href='mailto:#') info@demolink.org
+
+					.col-lg-4.wow.fadeInRight( data-wow-delay='.2s' )
+						h4.footer-classic-title Newsletter
+						p Subscribe to our newsletter to receive weekly news, updates, special offers, and exclusive discounts.
+						// RD Mailform
+						form.rd-form.rd-mailform.rd-form-inline.rd-form-inline-2( data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php' )
+							.form-wrap
+								input.form-input( id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required" )
+								label.form-label( for="subscribe-form-2-email" ) Enter your e-mail
+							.form-button
+								button.button.button-icon-2.button-zakaria( class= obj.button ? obj.button : 'button-secondary' type="submit" ): span.fl-bigmug-line-paper122
+
+		.footer-classic-panel: .container: .row.row-10.align-items-center.justify-content-sm-between
+			.col-md-auto
+				p.rights
+					span &copy;&nbsp;
+					span.copyright-year
+					span &nbsp;
+					span= logo.name
+					span .&nbsp; All rights reserved.
+			.col-md-auto.order-md-1: a(href='terms-of-use.html') Privacy Policy
+			.col-md-auto: .group-sm.group-middle
+				+png('payment-1-45x15')
+				+png('payment-2-46x28')
+				+png('payment-3-62x17')

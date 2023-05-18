@@ -1,0 +1,71 @@
+.isotope-wrap
+	.isotope-filters
+		//- Isotope Filters
+		button.isotope-filters-toggle.button.button-sm.button-icon.button-icon-right.button-filter(data-custom-toggle='.isotope-filters-list', data-custom-toggle-disable-on-blur="true")
+			span.icon.mdi.mdi-chevron-down
+			| Filter
+
+		.isotope-filters-list-wrap
+			ul.isotope-filters-list
+				li: a.active(href='#', data-isotope-filter='*') All
+				li: a(href='#', data-isotope-filter='Type 1') Personal
+				li: a(href='#', data-isotope-filter='Type 2') Corporate
+
+	.row.row-30.isotope.isotope-custom-1(data-lightgallery='group')
+		.col-sm-6.col-lg-4.col-xl-3.isotope-item(data-filter='Type 1')
+			+thumbnail-classic({
+				img: 'masonry-gallery-7-270x250',
+				imgOriginal: 'grid-fullwidth-gallery-8-1200x800-original',
+				title: 'Venue Search',
+				price: '12'
+			})
+
+		.col-sm-6.col-lg-4.col-xl-3.isotope-item(data-filter='Type 2')
+			+thumbnail-classic({
+				img: 'masonry-gallery-3-270x530',
+				imgOriginal: 'grid-fullwidth-gallery-5-1200x800-original',
+				title: 'Photography',
+				price: '13'
+			})
+
+		.col-sm-6.col-lg-4.col-xl-3.isotope-item(data-filter='Type 1')
+			+thumbnail-classic({
+				img: 'masonry-gallery-4-270x250',
+				imgOriginal: 'grid-fullwidth-gallery-7-1200x800' +
+				'-original',
+				title: 'Wedding Styling',
+				price: '10'
+			})
+
+		.col-sm-6.col-lg-4.col-xl-3.isotope-item(data-filter='Type 2')
+			+thumbnail-classic({
+				img: 'masonry-gallery-6-270x250',
+				imgOriginal: 'grid-fullwidth-gallery-4-1200x800-original',
+				title: 'Catering',
+				price: '8'
+			})
+
+		.col-sm-6.col-lg-4.col-xl-3.isotope-item(data-filter='Type 1')
+			+thumbnail-classic({
+				img: 'masonry-gallery-5-270x250',
+				imgOriginal: 'grid-fullwidth-gallery-3-1200x800-original',
+				title: 'Entertainment',
+				price: '14'
+			})
+
+		.col-sm-6.col-lg-4.col-xl-6.isotope-item(data-filter='Type 2')
+			+thumbnail-classic({
+				img: 'masonry-gallery-1-570x530',
+				imgOriginal: 'grid-fullwidth-gallery-1-1200x800-original',
+				title: 'Etiquette Consultation',
+				price: '16'
+			})
+
+		.col-sm-6.col-lg-8.col-xl-6.isotope-item(data-filter='Type 1')
+			+thumbnail-classic({
+				img: 'masonry-gallery-2-570x250',
+				imgOriginal: 'grid-fullwidth-gallery-2-1200x800-original',
+				title: 'videography',
+				price: '10'
+			})
+		.col-1

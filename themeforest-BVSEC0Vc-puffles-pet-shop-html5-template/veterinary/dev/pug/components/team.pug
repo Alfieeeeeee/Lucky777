@@ -1,0 +1,15 @@
+//- Team classic
+    @param {object} data - data object
+    @param {string} data.img - team image
+    @param {string} data.person - team person
+    @param {string} data.position - team person's position
+
+mixin team-classic( data )
+    // Service
+    article.box.team.team-classic.block.block-md&attributes( attributes )
+        a.box-figure( href= "staff-member.html")
+            +img( data.img ).team-classic-image
+        .team-classic-body
+            h4.team-classic-person
+                a( href="staff-member.html" )= data.person
+            p.mt-0.team-classic-position.text-primary= data.position

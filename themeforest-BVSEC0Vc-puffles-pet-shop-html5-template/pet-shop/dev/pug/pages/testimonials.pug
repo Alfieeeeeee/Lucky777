@@ -1,0 +1,99 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-modern
+include ../components/_ui-quote
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Testimonials'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Quote Modern
+	section.section.section-xxl.bg-default
+		.container
+			h3.fw-regular #1
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-6
+					+quote-modern({
+						img: 'user-5-62x62',
+						author: 'James Peterson',
+						status: 'Client',
+						text: 'Facilisi cras fermentum odio eu feugiat pretium nibh. Enim blandit volutpat maecenas volutpat blandit. Tempor orci dapibus ultrices in.'
+					})
+
+				.col-sm-6
+					+quote-modern({
+						img: 'user-6-62x62',
+						author: 'Ann McMillan',
+						status: 'Client',
+						text: 'Lorem mollis aliquam ut porttitor leo a diam. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl tincidunt dui ut ornare lectus.'
+					})
+
+	='\n'
+
+	// Quote Minimal
+	section.section.section-xxl.bg-gray-1
+		.container
+			h3.fw-regular #2
+			.row.row-30.justify-content-center: .col-xl-9
+				.slick-quote
+					// Slick Carousel
+					#carousel-parent-3.slick-slider.carousel-parent( data-autoplay='true', data-swipe='true' data-items='1' data-child='#child-carousel-3', data-for='#child-carousel-3' )
+						.item: p.quote-minimal-text Dolor magna eget est lorem ipsum dolor sit amet. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl.
+						.item: p.quote-minimal-text Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. Orci phasellus egestas tellus rutrum tellus pellentesque eu.
+						.item: p.quote-minimal-text Feugiat in ante metus dictum at tempor commodo ullamcorper. Tristique senectus et netus et dignissim cras tincidunt lobortis.
+					.slick-quote-nav
+						#child-carousel-3.slick-slider.child-carousel( data-arrows='true' data-for='#carousel-parent-3' data-items='1' data-sm-items='2' data-md-items='3' data-lg-items='3' data-xl-items='3' data-xxl-items='3' )
+							.item
+								.quote-minimal-figure: +img('user-7-87x87')
+								.quote-minimal-author Patrick Goodman
+								.quote-minimal-status Client
+							.item
+								.quote-minimal-figure: +img('user-8-87x87')
+								.quote-minimal-author Kate Smith
+								.quote-minimal-status Client
+							.item
+								.quote-minimal-figure: +img('user-9-87x87')
+								.quote-minimal-author Sam Wilson
+								.quote-minimal-status Client
+	='\n'
+
+	// Quote Creative
+	section.section.section-xxl.bg-default
+		.container
+			h3.fw-regular #3
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-6.col-lg-4
+					+quote-creative({
+						img: 'user-6-62x62',
+						author: 'Lisa Smith',
+						text: 'Et malesuada fames ac turpis egestas scelerisque '
+					})
+
+				.col-sm-6.col-lg-4
+					+quote-creative({
+						img: 'user-10-62x62',
+						author: 'Mark Wilson',
+						text: 'Ullamcorper eget nulla facilisi quis enim'
+					})
+
+				.col-sm-6.col-lg-4
+					+quote-creative({
+						img: 'user-11-62x62',
+						author: 'Jane Peterson',
+						text: 'Scelerisque viverra mauris  sem diam enim'
+					})
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

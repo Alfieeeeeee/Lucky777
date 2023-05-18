@@ -1,0 +1,94 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-quote
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'elements'
+	- var pageName = 'Typography'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Base typography
+	section.section.section-sm.section-first.bg-default.text-md-left
+		.container: .row.row-30.row-md-50
+			.col-lg-12
+				ul.list-xl.typography-style-1
+					li
+						h1 H1 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+					li
+						h2 H2 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+					li
+						h3 H3 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+					li
+						h4 H4 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+					li
+						h5 H5 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+					li
+						h6 H6 Heading
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+
+
+	// HTML Text Elements
+	section.section.section-sm.bg-default.text-md-left
+		.container
+			h3 HTML Text Elements
+			p.text-block Welcome to our wonderful world. This is a bold text
+				mark This is a highlighted text
+				| We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login
+				span.tooltip-custom(data-bs-toggle='tooltip' data-bs-placement="top" title="Default text") Tooltips
+				| widgets, you will definitely have a great experience of using our web page.
+				span.text-strike This is a strikethrough text
+				span.text-underline This is an underlined text.
+				a( href='#' ) Link
+				a( href='#' ).link-hover Hover link
+				a( href='#' ).link-active Press link
+	='\n'
+
+	// Lists and Blockquote
+	section.section.section-sm.bg-default.text-md-left
+		.container
+			h3 Ordered & Unordered Lists
+			.row.row-sm: .col-md-10.col-lg-8.col-xl-6: .row.row-30
+				.col-sm-6
+					ul.list-marked.d-inline-block.d-inline-md-block
+						li Consulting
+						li Customer Service
+						li Innovations
+						li Management
+						li Ethics
+				.col-sm-6
+					ol.list-ordered.d-inline-block.d-inline-md-block
+						li Consulting
+						li Customer Service
+						li Innovations
+						li Management
+						li Ethics
+	='\n'
+
+	// Blockquote
+	section.section.section-sm.section-last.bg-default.text-md-left
+		.container: .row.row-50: .col-md-10.col-lg-9.col-xl-7
+			h3 Blockquote
+			+quote-classic({
+				text: 'Welcome to our wonderful world. We sincerely hope that you will enjoy visiting our website.',
+				author: 'Patrick Goodman'
+			})
+
+	// Page Footer
+	include ../sections/_footer-modern

@@ -1,0 +1,113 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/team
+
+block variables
+    - pageName = 'About';
+
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-md-8.col-xl-6.text-center
+                    h2.h3.text-primary About our clinic
+                    p.lead Blandit mi bibendum fames ut vel diam mattis posuere scelerisque. Eget et risus et id sit.
+
+    // About part 1
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-30
+                .col-md-6.col-lg-5
+                    +img('about-01-500x315').img-rounded
+                .col-md-6.col-lg-5.offset-lg-1
+                    h2.h3 Professionalism and
+                        br.d-none.d-xl-block
+                        | commitment to excellence
+                    p.lead Consectetur leo enim, fusce non suspendisse. Sed neque arcu magna.
+                    p.lead Ornare fermentum, sit imperdiet ultrices sit et habitant. Amet sed dui magna ornare arcu. Consectetur ultrices dui, vitae cursus fames viverra et tristique. Enim, habitant odio praesent dolor porta congue.
+
+    // About part 2
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-30
+                .col-md-6
+                    h2.h3 Friendliness and responsiveness
+                    ul.list.list-lead.lead
+                        li Non, mollis risus sed mauris arcu vulputate aliquam interdum.
+                        li Mi posuere cursus neque in elit egestas.
+                        li Nascetur nisl aliquet tellus tellus donec.
+                        li Quis nisl, urna facilisis vitae, nullam amet.Lorem odio eget et in leo.
+                        li Morbi ultrices imperdiet in in. Urna mattis felis velit, mauris malesuada.
+                .col-md-6.col-lg-4.offset-lg-1
+                    +img('about-02-390x315').img-rounded
+
+    // Team
+    section.section.section-lg.bg-transparent
+        .container
+            .text-center
+                h2.h3 Meet our qualified staff
+                p.lead Get to know our veterinarians better
+            .owl-carousel.owl-type-1( data-owl!={autoplay: false, dots: true, margin: 30} data-sm-items= 2 data-lg-items= 3 data-xl-items= 4 data-xxl-margin=50 )
+                +team-classic({
+                    img: 'team-01-280x340',
+                    person: 'Dr. Jerome Bell',
+                    position: 'Veterinarian/Owner'
+                })
+                +team-classic({
+                    img: 'team-02-280x340',
+                    person: 'Dr. Kate Murphy',
+                    position: 'Veterinarian'
+                })
+                +team-classic({
+                    img: 'team-03-280x340',
+                    person: 'Jane Howard',
+                    position: 'Veterinary Technologist'
+                })
+                +team-classic({
+                    img: 'team-04-280x340',
+                    person: 'Robert Fox',
+                    position: 'RVT Assistant & Receptionist'
+                })
+
+    // Specialization
+    section.section.section-lg.bg-primary-light
+        .container
+            .text-center
+                h2.h3 Our specialization
+                p.lead What we specialize in
+            .row.row-30
+                .col-sm-6.col-md-4
+                    ul.list-md.list-checked.h6
+                        li: a( href="services.html") Complete companion animal care
+                        li: a( href="services.html") Ultrasonography
+                        li: a( href="services.html") Laser surgey
+                        li: a( href="services.html") Dentistry and digital dental X-Rays
+                        li: a( href="services.html") Dietary and nutritional couseling
+                .col-sm-6.col-md-4
+                    ul.list-md.list-checked.h6
+                        li: a( href="services.html") Reptile medicine
+                        li: a( href="services.html") Geneatric care
+                        li: a( href="services.html") Digital radiography
+                        li: a( href="services.html") Wellness and preventive care
+                        li: a( href="services.html") Microchipping
+                .col-sm-6.col-md-4
+                    ul.list-md.list-checked.h6
+                        li: a( href="services.html") Laser therapy
+                        li: a( href="services.html") Prescription pet foods
+                        li: a( href="services.html") In-house laboratory testing
+                        li: a( href="services.html") Endoscopy
+                        li: a( href="services.html") Complete surgical services
+
+    // Contact us
+    include ../sections/_contact-us
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

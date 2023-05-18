@@ -1,0 +1,24 @@
+.rd-navbar-project
+	.rd-navbar-project-header
+		button.rd-navbar-project-hamburger.rd-navbar-project-hamburger-close( type='button' data-multitoggle='.rd-navbar-main', data-multitoggle-blur='.rd-navbar-wrap', data-multitoggle-isolate )
+			span.project-close
+				span
+				span
+
+		h5.rd-navbar-project-title Our Contacts
+
+	.rd-navbar-project-content: div
+		div
+			// Owl Carousel
+			.owl-carousel( data-items='1' data-dots='true' data-autoplay='true' )
+				+img('about-5-350x269')
+				+img('about-6-350x269')
+				+img('about-7-350x269')
+
+			ul.contacts-modern
+				li: a( href='#' ) 523 Sylvan Ave, 5th Floor
+					br
+					| Mountain View, CA 94041 USA
+				li: a( href='tel:#' ) +1 (844) 123 456 78
+
+		div: +widget-list([], '', 'list-social list-inline-xl')

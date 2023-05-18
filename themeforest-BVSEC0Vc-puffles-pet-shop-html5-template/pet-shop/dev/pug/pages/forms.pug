@@ -1,0 +1,152 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-inline-subscribe-form
+include ../includes/_contact-form
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'elements'
+	- var pageName = 'Forms'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Forms
+	section.section.section-xxl.bg-default.text-md-left
+		.container: .row.row-40.justify-content-center.justify-content-md-between
+			.col-sm-10.col-md-5.col-xl-6: .inset-xl-right-70
+				h3 Contact form 1
+				+contact-form
+
+			.col-sm-10.col-md-6: .inset-xl-right-50
+				h3 Login form
+				.group.group-middle.group-button-1
+					a.button.button-google.button-icon.button-icon-left.button-round( href='#' )
+						span.icon.fa.fa-google-plus
+						| Google+
+					a.button.button-twitter.button-icon.button-icon-left.button-round( href='#' )
+						span.icon.fa.fa-twitter
+						| Twitter
+					a.button.button-facebook.button-icon.button-icon-left.button-round( href='#' )
+						span.icon.fa.fa-facebook
+						| Facebook
+
+				// RD Mailform
+				form.rd-form.rd-mailform
+					.form-wrap
+						input#login-name.form-input(type='text' name='name' data-constraints='@Required')
+						label.form-label(for='login-name') Username
+
+					.form-wrap
+						input#login-password.form-input(type='password' name='password' data-constraints='@Required')
+						label.form-label(for='login-password') Password
+
+					label.checkbox-inline
+						input(name='input-checkbox-1' value='checkbox-1' type='checkbox')
+						| Remember Me
+
+					.group-sm.group-middle.group-button-1
+						button.button.button-lg.button-primary.button-zakaria(type='submit') Sign In
+						a.button.button-lg.button-secondary.button-zakaria( href='#' ) Create an account
+	='\n'
+
+	+parallax({
+		img: 'bg-cta-1',
+		innerClass: 'section-xxl context-light text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center.align-items-md-end
+			.col-lg-3
+				h3.text-spacing-100.wow.fadeInLeft Stay
+					=' '
+					span.fw-light connected
+				p.wow.fadeInLeft( data-wow-delay='.1s' ) Subscribe to our newsletter
+
+			.col-lg-8.col-xl-9.inset-lg-bottom-10
+				+inline-subscribe-form({
+					mod: 'form-lg rd-form-text-center',
+					button: 'button-lg button-primary'
+				})
+
+	// Contact form 2
+	section.section.section-sm.section-first.bg-default.text-md-left
+		.container
+			h3 Contact form 2
+			+contact-form-2
+	='\n'
+
+	// Contact form (With Recaptha)
+	section.section.section-sm.bg-default.text-md-left
+		.container
+			h3 Contact form (With Recaptha)
+			// RD Mailform
+			form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+				.row.row-20.row-md-30
+					.col-lg-8: .row.row-20.row-md-30
+						.col-sm-6: .form-wrap
+							input#contact-first-name-3.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-first-name-3') First Name
+
+						.col-sm-6: .form-wrap
+							input#contact-last-name-3.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-last-name-3') Last Name
+
+						.col-sm-6: .form-wrap
+							input#contact-email-3.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email-3') E-mail
+
+						.col-sm-6: .form-wrap
+							input#contact-phone-3.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone-3') Phone
+
+					.col-lg-4: .form-wrap
+						label.form-label(for='contact-message-3') Message
+						textarea#contact-message-3.form-input.textarea-lg(name='phone' data-constraints='@Required')
+
+				.group-sm.group-middle
+					.form-wrap.form-wrap-recaptcha
+						// Google captcha
+						.recaptcha#captcha1(data-sitekey='6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt')
+
+					div: button.button.button-lg.button-secondary.button-zakaria(type='submit') Send message
+	='\n'
+
+	// MailChimp
+	section.section.section-sm.bg-default.text-center
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h3 MailChimp
+			p.big Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.
+
+			// Mailchimp
+			form.rd-form.mailchimp-mailform.rd-form-inline(data-form-output='form-output-global' action='https://templatemonster.us15.list-manage.com/subscribe/post?u=ba5bb362073a413f48e4a7b90&id=8dc95d9dec' method='post')
+				.form-wrap
+					label.form-label(for='mailchimp-email') Enter your e-mail
+					input#mailchimp-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+				.form-button
+					button.button.button-primary.button-zakaria(type='submit') Subscribe
+	='\n'
+
+	// Campaign Monitor
+	section.section.section-sm.section-last.bg-default.text-center
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h3 Campaign Monitor
+			p.big Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.
+
+			// Campaign Monitor
+			form.rd-form.campaign-mailform.rd-form-inline(data-form-output='form-output-global' action='https://templatermonster.createsend.com/t/j/s/zjjikd/' method='post')
+				.form-wrap
+					label.form-label(for='campaign-email') Enter your e-mail
+					input#campaign-email.form-input(type='email' name='cm-zjjikd-zjjikd' data-constraints='@Email @Required')
+				.form-button
+					button.button.button-primary.button-zakaria(type='submit') Subscribe
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

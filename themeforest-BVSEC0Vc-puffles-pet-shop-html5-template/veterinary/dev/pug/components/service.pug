@@ -1,0 +1,15 @@
+//- Service
+    @param {object} data - data object
+    @param {string} data.img - service image
+    @param {string} data.title - service title
+    @param {string} data.text - service text
+
+mixin service( data )
+    // Service
+    article.box.service&attributes( attributes )
+        a.box-figure( href= "single-service.html")
+            +img( data.img ).service-image
+        .service-body
+            .service-title.h4
+                a( href= "single-service.html" )= data.title
+            .service-text= data.text

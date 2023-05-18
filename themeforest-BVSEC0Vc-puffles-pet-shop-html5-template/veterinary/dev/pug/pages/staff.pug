@@ -1,0 +1,81 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/team
+
+block variables
+    - pageName = 'Staff';
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-md-8.text-center
+                    h2.h3.text-primary Pet care staff
+                    p.lead Maecenas euismod arcu vel in maecenas eget egestas morbi auctor. Sed vitae sit morbi amet nec. In amet accumsan elementum purus.
+
+    // Main
+    section.section.section-lg.bg-transparent
+        .container
+            .text-center
+                h2.h3 Meet our qualified staff
+                p.lead Get to know our specisalists better
+            .row.row-15.row-md-30.row-xxl-50
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-01-280x340',
+                        person: 'Dr. Jerome Bell',
+                        position: 'Veterinarian/Owner'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-02-280x340',
+                        person: 'Dr. Kate Murphy',
+                        position: 'Veterinarian'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-03-280x340',
+                        person: 'Jane Howard',
+                        position: 'Veterinary Technologist'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-04-280x340',
+                        person: 'Robert Fox',
+                        position: 'RVT Assistant & Receptionist'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-05-280x340',
+                        person: 'Dr. Ann Smith',
+                        position: 'Veterinarian'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-06-280x340',
+                        person: 'Dr. Sarah Russell',
+                        position: 'Veterinarian'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-07-280x340',
+                        person: 'Julie Jones',
+                        position: 'Veterinary assistant'
+                    })
+                .col-md-6.col-lg-4.col-xl-3
+                    +team-classic({
+                        img: 'team-08-280x340',
+                        person: 'Jerome Edwards',
+                        position: 'Office Manager'
+                    })
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

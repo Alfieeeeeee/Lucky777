@@ -1,0 +1,23 @@
+//- Pricing
+
+mixin pricing-classic(obj)
+	article.pricing-classic( class= obj.mod )&attributes(attributes)
+		.pricing-classic-header
+			if(obj.img)
+				+img( obj.img ).pricing-classic-figure
+			else
+				.pricing-colored-figure(class=obj.bgColor)
+			.pricing-classic-caption: div
+				if(obj.priceOld)
+					span.product-badge.product-badge-sale(class=obj.tagColor) Sale
+				h3.pricing-classic-title= obj.title
+				.pricing-classic-price-wrap
+					if(obj.from == true)
+						.heading-4.fw-normal.text-white from
+					if(obj.priceOld)
+						.pricing-classic-price.pricing-classic-price-old.heading-6= '$' + obj.priceOld + '.00'
+					.pricing-classic-price.heading-4= '$' + obj.price + '.00'
+
+		.pricing-classic-body
+			block
+			a.button.button-lg.button-zakaria(class=obj.btnClass || 'button-default-outline-2' href='cart-page.html') Add to cart

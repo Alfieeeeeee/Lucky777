@@ -1,0 +1,13 @@
+//- Quote
+    @param {object} data - data object
+    @param {string} data.text - quote text
+    @param {string} data.author - quote author
+
+mixin quote( data )
+    // Service
+    article.quote&attributes( attributes )
+        .quote-body
+            .quote-icon
+                +img('quote.svg')
+            q.quote-text= data.text
+            .quote-author.h6.text-primary= '- ' + data.author

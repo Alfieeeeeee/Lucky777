@@ -1,0 +1,52 @@
+/** @section Links */
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.context-dark a {
+	@include link($white, $primary-dark);
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.link-info {
+	display: inline-block;
+	font-family: $font-family-sec;
+	font-size: $font-size-sm;
+	font-weight: bold;
+	text-decoration: underline!important;
+	* + & {
+		margin-top: 15px;
+	}
+	@include media-breakpoint-up(md) {
+		* + & {
+			margin-top: 40px;
+		}
+	}
+}
+
+.privacy-link {
+	display: inline-block;
+}

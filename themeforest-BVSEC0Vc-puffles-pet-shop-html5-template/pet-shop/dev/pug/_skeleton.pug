@@ -1,0 +1,39 @@
+include _config
+include _functions
+include _elements
+include sections/_header-classic
+include sections/_footer-classic
+
+block variables
+
+doctype html
+html( lang='en', class=htmlClass )
+	head
+		block title
+			title= pageName
+
+		meta( charset='utf-8' )
+		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+
+		link( rel='icon', href='images/favicon.ico', type='image/x-icon' )
+		link( rel='stylesheet', type='text/css', href=fonts )
+		link( rel='stylesheet', href='css/bootstrap.css' )
+		link( rel='stylesheet', href='css/fonts.css')
+		link( rel="stylesheet" href="css/style.css")
+
+	body
+		.preloader
+			.preloader-body
+				.cssload-bell
+					- for ( var i = 0; i < 5; i++ )
+						.cssload-circle
+							.cssload-inner
+
+		.page
+			block page
+
+		#form-output-global.snackbars
+
+		script( src='js/core.min.js' )
+		script( src='js/script.js' )

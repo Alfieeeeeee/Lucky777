@@ -1,0 +1,75 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+
+block variables
+    - pageName = 'Gallery';
+
+block page
+
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-lg-6.text-center
+                    h1.h3 Our gallery
+                    p.lead Adipiscing etiam sit tincidunt fringilla mauris ac. A sollicitudin amet sit scelerisque amet. Proin.
+
+    // Gallery
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-15.row-sm-30.row-xl-50( data-lightgallery="group" )
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-01.jpg" data-lightgallery="item" )
+                            +img('gallery-01-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-02.jpg" data-lightgallery="item" )
+                            +img('gallery-02-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-03.jpg" data-lightgallery="item" )
+                            +img('gallery-03-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-04.jpg" data-lightgallery="item" )
+                            +img('gallery-04-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-05.jpg" data-lightgallery="item" )
+                            +img('gallery-05-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-06.jpg" data-lightgallery="item" )
+                            +img('gallery-06-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-07.jpg" data-lightgallery="item" )
+                            +img('gallery-07-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-08.jpg" data-lightgallery="item" )
+                            +img('gallery-08-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+                .col-sm-6.col-md-4
+                    article.thumbnail-classic
+                        a.thumbnail-classic-figure( href="images/gallery-original-09.jpg" data-lightgallery="item" )
+                            +img('gallery-09-390x460').img-rounded
+                            .thumbnail-classic-icon.fl-bigmug-line-ico.fl-bigmug-line-search74
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

@@ -1,0 +1,157 @@
+/** @section Backgrounds */
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+
+// Light Backgrounds
+.bg-default {
+	@include bg-behaviour(transparent);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+
+// Dark Backgrounds
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+
+// Accent Backgrounds
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+
+// Background Image
+.bg-image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+// Desktop only
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+
+// Background layer
+.bg-layer {
+	position: relative;
+	z-index: 0;
+}
+
+.bg-layer-absolute {
+	position: absolute;
+	content: '';
+	top: 0;
+	bottom: 34%;
+	right: 0;
+	left: 0;
+}
+
+.bg-layer-item {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	background-size: cover;
+	background-position: bottom center;
+}
+
+.bg-layer-item-1 {
+	bottom: 0;
+	background-position: 50% 20%;
+}
+
+.bg-layer-image {
+	pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: -21%;
+	z-index: -1;
+	margin: 0;
+	max-height: 100%;
+	width: auto;
+	max-width: none;
+	opacity: .2;
+}
+
+.bg-layer-image-1 {
+	top: -38%;
+}
+
+.bg-layer-image-2,
+.bg-layer-image-3 {
+	left: auto;
+	right: 0;
+	top: 0;
+}
+
+@include media-breakpoint-up(md) {
+	.bg-layer-image-2 {
+		top: -22%;
+		z-index: 2;
+	}
+
+	.bg-layer-image-3 {
+		top: -16%;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.bg-layer-item-1 {
+		top: 10%;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.bg-layer-image {
+		opacity: 1;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.bg-layer-item-1 {
+		top: 20%;
+	}
+}

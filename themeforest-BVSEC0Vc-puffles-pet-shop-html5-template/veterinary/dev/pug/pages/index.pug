@@ -1,0 +1,151 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/service
+include ../components/quotes
+include ../components/video
+include ../components/social
+
+block variables
+	- pageName = 'Home';
+
+block page
+	include ../sections/_header-classic
+
+	// Intro
+	section.section.section-inset-1.bg-image.bg-overlay(style='background-image: url(images/top-banner.jpg)')
+		.container
+			.row.justify-content-center
+				.col-lg-7.text-center
+					h1.h3.text-primary.wow.fadeInUp Passionate experts. Accessible care.
+					p.lead.offset-top-md-30.wow.fadeInUp( data-wow-delay='.1s' ) Dogs, cats, birds, and pocket pets—from fur to feathers, we gladly welcome them all to our veterinary center!
+					a( href="#" data-wow-delay='.15s' ).btn.btn-primary.btn-circle.wow.fadeInUp Book an appointment
+
+	// Welcome
+	section.section.section-lg.bg-transparent
+		.container
+			h2.h4.text-primary.wow.fadeInUp( data-wow-delay='.1s' ) Welcome
+			.row.row-30.row-lg
+				.col-lg-5
+					h3.wow.fadeInLeft( data-wow-delay='.15s' ) Welcome to Puffles!
+						br.d-none.d-md-block
+						| Here you can be sure that your pets are happy and healthy.
+				.col-lg-6.offset-xl-1.wow.fadeInRight( data-wow-delay='.15s' )
+						p.lead We offer specialty veterinary treatment for pets. In the city that never sleeps, our hospital keeps pace with you and your pets as we are open 24/7 for pet emergencies.
+						a.link-info(href="about.html") More about us
+				.col-lg-7.offset-xl-1.wow.fadeInUp( data-wow-delay='.15s' )
+					+img('welcome-716x367.jpg').img-rounded.offset-top-xl
+
+	// Advantages
+	section.section.section-lg.bg-transparent
+		.container
+			.text-start
+				h2.h3.wow.fadeInUp( data-wow-delay='.1s' ) Why clients choose us
+				p.lead.wow.fadeInUp( data-wow-delay='.15s' )  Learn more about why pet owners like Puffles.
+			.row.row-30.text-center.text-sm-left
+				.col-sm-6.col-md-4
+					.box-icon.wow.fadeInRight( data-wow-delay='.15s' )
+						+img('doctors.svg')
+						h4 Professional doctors
+						p.middle Every member of our staff has undergone training to become an expert.
+				.col-sm-6.col-md-4
+					.box-icon.wow.fadeInRight( data-wow-delay='.2s' )
+						+img('consultations.svg')
+						h4 In-home consultations
+						p.middle We provide mobile veterinary services for your pets.
+				.col-sm-6.col-md-4
+					.box-icon.wow.fadeInRight( data-wow-delay='.25s' )
+						+img('support.svg')
+						h4 24/7 patient support
+						p.middle 24/7 veterinary emergency and specialty care for patients as usual.
+
+	// Owl services
+	section.section.section-lg.position-relative.pb-1
+		.bg-layer.bg-primary-light( style='bottom: 25%' )
+		.container.position-relative.mt-0
+			.text-center
+				h2.h3.wow.fadeInUp( data-wow-delay='.1s' ) Best services
+				p.lead.wow.fadeInUp( data-wow-delay='.15s' ) We provide both medical and surgical services to pets
+			.owl-carousel.owl-type-1( data-owl!={autoplay: false, dots: true, margin: 30} data-sm-items=2 data-lg-items=3 data-xl-items=4 data-xxl-margin=50 )
+				+service({
+					img: 'service-01-280x280',
+					title: 'Dental',
+					text: 'State-of-the-art veterinary dental care and oral surgery.'
+				}).block.block-sm.block-center.wow.fadeInLeft( data-wow-delay='.15s' )
+				+service({
+					img: 'service-02-280x280',
+					title: 'Vaccinations',
+					text: 'Protecting your pet against diseases via vaccination.'
+				}).block.block-sm.block-center.wow.fadeInLeft( data-wow-delay='.2s' )
+				+service({
+					img: 'service-03-280x280',
+					title: 'Surgery',
+					text: 'We can meet many of your pet’s surgical needs.'
+				}).block.block-sm.block-center.wow.fadeInLeft( data-wow-delay='.25s' )
+				+service({
+					img: 'service-04-280x280',
+					title: 'Diet & Nutrition',
+					text: 'Proper diet & nutrition can help your pet stay healthy.'
+				}).block.block-sm.block-center.wow.fadeInLeft( data-wow-delay='.3s' )
+				+service({
+					img: 'service-05-280x280',
+					title: 'Parasite control',
+					text: 'Ensuring that your pet is comfortably parasite-free.'
+				}).block.block-sm.block-center
+				+service({
+					img: 'service-06-280x280',
+					title: 'Laser therapy',
+					text: 'Laser treatment is used to manage wound healing.'
+				}).block.block-sm.block-center
+	// Video
+	section.section.section-lg.bg-transparent
+		.container
+			.row.row-30.align-items-xl-end.flex-sm-row-reverse.justify-content-lg-between
+				.col-md-5.col-xl-4.pb-xl-5.wow.fadeInUp
+					h2.h3 We provide top-notch animal care
+					p.lead We are committed to providing comprehensive, quality care for each pet to enhance their well-being and quality of life.
+				.col-md-7.col-xxl-7.offset-xxl-1
+					+video({
+						img: 'service-big-717x406'
+					}).wow.fadeInUp
+
+	// Testimonials
+	section.section.section-lg.bg-primary-light
+		.container
+			.text-center
+				h2.h3.wow.fadeInUp( data-wow-delay='.1s' ) Don't ask us, ask our patients
+				p.lead.wow.fadeInUp( data-wow-delay='.15s' ) Don’t take our word for it — hear what our customers are saying
+			.owl-carousel.owl-type-2( data-owl!={
+				autoplay: false,
+				dots: true,
+				margin: 30
+			}  data-md-items= 2 data-xl-items= 3 data-xxl-margin=50)
+				+quote({
+					text: 'We have been taking our dogs to Puffles for the last 7 years. They really do care about the pets and have never overcharged us for anything.',
+					author: 'Jacob Jones'
+				}).block.block-md.block-center.wow.fadeInUp( data-wow-delay='.15s' )
+				+quote({
+					text: 'Thank you for all you did to help our dog when he became ill and hospitalized, we are forever grateful.',
+					author: 'Cameron Williamson'
+				}).block.block-md.block-center.wow.fadeInUp( data-wow-delay='.2s' )
+				+quote({
+					text: 'Thank you for taking care of Sami when I came in last month. You demonstrated a great deal of care and expertise during our visit.',
+					author: 'Dianne Russell'
+				}).block.block-md.block-center.wow.fadeInUp( data-wow-delay='.25s' )
+
+	// Booking
+	section.section.section-lg.bg-transparent
+		.container.text-center
+			h2.h1.text-primary.wow.fadeInUp Book Your
+				br.d-none.d-sm-block
+				| Free Consultation
+			p.lead.wow.fadeInUp( data-wow-delay='.2s' ) Consult with our professional veterinarians today.
+			a( href="#" data-wow-delay='.3s' ).btn.btn-primary.btn-circle.wow.fadeInUp Book an appointment
+
+	// Footer
+	include ../sections/_footer-classic
+	// Google map
+	include ../sections/_google-map
+
+
+

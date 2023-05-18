@@ -1,0 +1,57 @@
+// Pricing
+
+.pricing-classic {
+  //max-width: 280px;
+  padding: 20px;
+  border-radius: $border-radius;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  @include media-breakpoint-up(sm) {
+  	//max-width: 390px;
+    padding: 40px 30px 40px 40px;
+  }
+}
+
+.pricing-classic-header{
+
+}
+
+.pricing-classic-tariff {
+  display: flex;
+  align-items: center;
+}
+
+.pricing-classic-price {
+  font-size: $h2-font-size;
+  line-height: $h2-font-size;
+  font-weight: $font-weight-black;
+}
+
+.pricing-classic-symbol {
+  align-self: start;
+}
+
+.pricing-classic-divider {
+  padding-left: 5px;
+}
+
+.pricing-classic-period {
+
+}
+
+.pricing-classic-text {
+  margin-top: 25px;
+}
+
+.pricing-classic-list {
+  margin-top: 20px;
+}
+
+.pricing-classic-body {
+
+}
+
+.pricing-classic-list {
+
+}
+

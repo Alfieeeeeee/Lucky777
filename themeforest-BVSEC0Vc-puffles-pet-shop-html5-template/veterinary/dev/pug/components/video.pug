@@ -1,0 +1,17 @@
+//- Video button
+mixin video-btn
+    // Video button
+    a.video-btn( href='https://www.youtube.com/watch?v=hhF-oZbI0lk', data-lightgallery='item' )&attributes(
+        attributes )
+        svg.video-btn-svg( width='19', height='21', viewbox='0 0 19 21' )
+            path( d='M18.0698 8.92762C19.3101 9.63455 19.3101 11.3655 18.0698 12.0724L2.85678 20.7432C1.59455 21.4626 -6.40869e-08 20.585 0 19.1708L7.85887e-07 1.82916C8.49974e-07 0.414998 1.59455 -0.462644 2.85678 0.256784L18.0698 8.92762Z' )
+
+
+//- Video
+    @param {object} data - data object
+    @param {string} data.img - image name or path
+mixin video( data )
+    // Video
+    article.video&attributes( attributes )
+        +img( data.img ).video-image
+        +video-btn

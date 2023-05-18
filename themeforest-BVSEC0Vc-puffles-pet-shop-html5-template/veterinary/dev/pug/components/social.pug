@@ -1,0 +1,9 @@
+//- List social
+mixin list-social( data )
+
+    // List social
+    ul.list.list-social&attributes( attributes )
+        each item in data
+            li.list-social-item
+                a.icon.icon-social( class= item, href='#' )
+

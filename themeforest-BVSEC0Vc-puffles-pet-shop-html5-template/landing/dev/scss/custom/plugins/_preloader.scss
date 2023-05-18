@@ -1,0 +1,62 @@
+/** @section Preloader */
+
+
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: $white;
+	transition: .3s all ease;
+
+	&.loaded {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.preloader-body {
+	position: relative;
+	width:400px;
+	height:400px;
+}
+
+
+// Custom Styles
+.preloader-item-1,
+.preloader-item-2 {
+	width:70px;
+	height:70px;
+	position:absolute;
+	background:$primary;
+	border-radius:50%;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.preloader-item-1{
+	left:20%;
+	animation:osc-l 2.5s ease infinite;
+}
+.preloader-item-2{
+	left:80%;
+	animation:osc-r 2.5s ease infinite;
+	background:$primary-lighter;
+}
+@keyframes osc-l{
+	0%{left:20%;}
+	50%{left:50%;}
+	100%{left:20%;}
+}
+@keyframes osc-r{
+	0%{left:80%;}
+	50%{left:50%;}
+	100%{left:80%;}
+}

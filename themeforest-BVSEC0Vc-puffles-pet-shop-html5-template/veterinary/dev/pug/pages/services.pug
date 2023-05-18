@@ -1,0 +1,133 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/service
+include ../components/pricing
+
+block variables
+    - pageName = 'Services';
+
+block page
+
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-md-8.text-center
+                    h2.h3.text-primary Our services
+                    p.lead Sed mattis felis fringilla tortor vulputate ut erat risus praesent. In ut habitant bibendum tellus. Donec volutpat sed at eu nibh.
+
+    // Services
+    section.section.section-lg.bg-transparent
+        .container
+            .text-center
+                h2.h3 Best veterinary services
+                p.lead We provide both medical and surgical services to pets.
+            .row.row-30.row-xxl-50
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-01-280x280',
+                        title: 'Dental',
+                        text: 'State-of-the-art veterinary dental care and oral surgery.'
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-02-280x280',
+                        title: 'Vaccinations',
+                        text: 'Protecting your pet against diseases via vaccination.'
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-03-280x280',
+                        title: 'Surgery',
+                        text: 'We can meet many of your pet’s surgical needs.'
+                }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-04-280x280',
+                        title: 'Diet & Nutrition',
+                        text: 'Proper diet & nutrition can help your pet stay healthy.'
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-07-280x280',
+                        title: 'Spraying',
+                        text: 'Sed lectus vestibulum mattis ullamcorper velit sed. '
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-05-280x280',
+                        title: 'Parasite control',
+                        text: 'Ensuring that your pet is comfortably parasite-free.'
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-06-280x280',
+                        title: 'Laser therapy',
+                        text: 'Laser treatment is used to manage wound healing.'
+                    }).block.block-sm.block-center
+                .col-sm-6.col-lg-3
+                    +service({
+                        img: 'service-08-280x280',
+                        title: 'Allergies',
+                        text: 'Consectetur a erat nam at lectus urna duis convallis.'
+                    }).block.block-sm.block-center
+
+    // Pricing
+    section.section.section-lg.bg-primary-light
+        .container
+            .text-center
+                h2.h3 The cost of our services
+                p.lead Take a look at our affordable pricing & services.
+            .owl-carousel.owl-type-2( data-owl!={
+                autoplay: false,
+                dots: true,
+                margin: 30
+            }  data-md-items= 2 data-xl-items= 3 data-xxl-margin=50)
+                +pricing-classic({
+                    title: 'Core',
+                    price: 35,
+                    text: 'The Core Plan offers the essentials to help maintain your pet\'s health. From exams to vaccines, this convenient plan has your pet covered for the basics of medical care.'
+                }).block.block-md.block-center
+                    ul.h6.pricing-classic-list.list-md.list-checked
+                        li Unlimited office visits
+                        li 2 intestinal fecal exams
+                        li Heartworm test
+                        li Ear cytology
+                        li Skin cytology
+
+                +pricing-classic({
+                    title: 'Vital',
+                    price: 55,
+                    text: 'The Vital Plan adds an additional layer of prevention for your pet. This plan includes yearly bloodwork, urinalysis and lifestyle vaccinations.'
+                }).block.block-md.block-center
+                    ul.h6.pricing-classic-list.list-md.list-checked
+                        li Unlimited office visits
+                        li Camp + care
+                        li Blood work
+                        li Urinalysis
+                        li Leukemia vaccine
+
+                +pricing-classic({
+                    title: 'Premium',
+                    price: 75,
+                    text: 'The Premium Plan offers the complete care package for your pet. This plan includes added services such as dental cleaning, blood pressure checks and an EKG.'
+                }).block.block-md.block-center
+                    ul.h6.pricing-classic-list.list-md.list-checked
+                        li Unlimited office visits
+                        li Electrocardiogram
+                        li Pulse oximetry
+                        li Professional dental cleaning
+                        li Camp + care
+
+
+    // Contact us
+    include ../sections/_contact-us
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

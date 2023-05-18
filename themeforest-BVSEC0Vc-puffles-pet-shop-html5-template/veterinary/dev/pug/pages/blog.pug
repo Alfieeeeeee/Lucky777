@@ -1,0 +1,90 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/pagination
+
+block variables
+    - pageName = 'Blog';
+
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    // Intro
+    section.section.section-lg.bg-primary-light
+        .container
+            .row.justify-content-center
+                .col-md-6.text-center
+                    h1.h3 News and articles
+                    p.lead Read our latest articles tips & news
+
+    //Main
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-50
+                .col-12
+                    article.post.post-line
+                        a( href="blog-post.html" ).post-figure
+                            +img('blog-01-500x315').img-rounded
+                        .post-body
+                            .post-meta.h6
+                                time(datetime="2021-03-09").post-time.text-primary March 9, 2021
+                                .post-comments Comment(s)&nbsp;
+                                    span.post-comments-value 0
+                            .post-content
+                                    h3.post-title
+                                        a(href="blog-post.html") Easy tricks to teach your dog
+                                    p.lead Nam at lectus urna duis convallis convallis. Sem et tortor consequat id. Lacus laoreet non curabitur gravida lectus urna duis convallis.
+                            a.link-info(href="blog-post.html") Read more
+                .col-12
+                    article.post.post-line
+                        a( href="blog-post.html" ).post-figure
+                            +img('blog-02-500x315').img-rounded
+                        .post-body
+                            .post-meta.h6
+                                time(datetime="2021-03-09").post-time.text-primary March 9, 2021
+                                .post-comments Comment(s)&nbsp;
+                                    span.post-comments-value 0
+                            .post-content
+                                    h3.post-title
+                                        a(href="blog-post.html") 8 tips for taking the perfect
+                                            br.d-none.d-xl-block
+                                            | photo of your pet
+                                    p.lead Cursus tempus, sagittis mauris orci orci fermentum quisque. Nisl nulla dolor urna massa. Ut condimentum risus consectetur nullam dia.
+                            a.link-info(href="blog-post.html") Read more
+                .col-12
+                    article.post.post-line
+                        a( href="blog-post.html" ).post-figure
+                            +img('blog-03-500x315').img-rounded
+                        .post-body
+                            .post-meta.h6
+                                time(datetime="2021-03-09").post-time.text-primary March 9, 2021
+                                .post-comments Comment(s)&nbsp;
+                                    span.post-comments-value 0
+                            .post-content
+                                    h3.post-title
+                                        a(href="blog-post.html") Deciphering your cat’s language
+                                    p.lead Vulputate id quam non eget. Risus quisque ullamcorper adipiscing arcu malesuada morbi id. Enim feugiat lectus lobortis iaculis enim lectus.
+                            a.link-info(href="blog-post.html") Read more
+                .col-12
+                    article.post.post-line
+                        a( href="blog-post.html" ).post-figure
+                            +img('blog-04-500x315').img-rounded
+                        .post-body
+                            .post-meta.h6
+                                time(datetime="2021-03-09").post-time.text-primary March 9, 2021
+                                .post-comments Comment(s)&nbsp;
+                                    span.post-comments-value 0
+                            .post-content
+                                    h3.post-title
+                                        a(href="blog-post.html") Dog friendly summer & autumn activities
+                                    p.lead Elit maecenas a ac sed eget erat risus sit. Habitasse morbi nec pellentesque maecenas quis elementum nunc, placerat. In aliquam dia.
+                            a.link-info(href="blog-post.html") Read more
+            .pagination-wrap: +pagination-bootstrap(null, 1,[1,2,3])
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

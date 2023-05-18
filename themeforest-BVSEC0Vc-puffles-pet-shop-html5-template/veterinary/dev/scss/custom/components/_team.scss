@@ -1,0 +1,47 @@
+/** @section Team */
+
+.team {
+  border-radius: $border-radius;
+  background-color: white;
+  box-shadow: $box-shadow;
+}
+
+.team-classic-body {
+  padding: 25px 30px 30px 40px;
+}
+
+.team-classic-position {
+  font-family: $font-family-sec;
+}
+
+// Team big
+
+.team-big {
+  max-width:  390px;
+  .team-big-figure {
+    display: block;
+    overflow: hidden;
+    border-radius: $border-radius $border-radius 0 0;
+    > img {
+      width: 100%;
+    }
+  }
+}
+
+.team-big-body {
+  padding: 40px;
+}
+
+.team-big-phone  {
+  display: flex;
+  align-items: center;
+  > a{
+    font-family: $font-family-sec;
+    font-weight: 700;
+  }
+}
+
+.team-big-email {
+  font-family: $font-family-sec;
+}
+

@@ -1,0 +1,100 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CLato%7CKalam:300,400,700",
+		subscribeFormCounter = 0,
+		logo = {
+			default: 'logo-default-336x120.png',
+			name: 'Puffles'
+		},
+		links = {
+			about: 'about-us.html',
+			post: 'blog-post.html',
+			shop: 'shop-list.html',
+			product: 'single-product.html',
+			service: '#',
+			team: '#',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#ffd33b',
+			secondary: '#ff4342'
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home',
+				link: 'index.html'
+			},
+			{
+				title: 'Pages',
+				category: 'pages',
+				link: '#',
+				dropdown: [
+					{ title: 'About Us' },
+					{ title: 'What We Offer' },
+					{ title: 'Testimonials' },
+					{ title: 'Pricing List' }
+				]
+			},
+			{
+				title: 'Blog',
+				category: 'blog',
+				link: 'grid-blog.html',
+				dropdown: [
+					{ title: 'Grid Blog' },
+					{ title: 'Blog List' },
+					{ title: 'Blog Post' }
+				]
+			},
+			{
+				title: 'Gallery',
+				category: 'gallery'
+			},
+			{
+				title: 'Elements',
+				category: 'elements',
+				link: '#',
+				megamenu: [
+					{
+						title: 'Elements',
+						icon: 'mdi mdi-apps',
+						listClass: 'rd-megamenu-list-2',
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Progress bars' },
+							{ title: 'Tabs & accordions', link: 'tabs-and-accordions.html' },
+							{ title: 'Buttons' },
+							{ title: 'Tables' },
+							{ title: 'Forms' },
+							{ title: 'Counters' },
+							{ title: 'Grid system' }
+						]
+					},
+					{
+						title: 'Additional pages',
+						icon: 'mdi mdi-layers',
+						itemClass: 'flex-grow-1 flex-shrink-0',
+						list: [
+							{ title: '404 Page' },
+							{ title: 'Coming Soon' },
+							{ title: 'Contact Us' },
+							{ title: 'Privacy policy' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Shop',
+				category: 'shop',
+				link: links.shop,
+				dropdown: [
+					{ title: 'Shop List' },
+					{ title: 'Single Product' },
+					{ title: 'Cart Page' },
+					{ title: 'Checkout' }
+				]
+			}
+		],
+
+		checkoutFormCounter = ''

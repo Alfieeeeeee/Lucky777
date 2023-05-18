@@ -1,0 +1,205 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-team
+include ../components/_ui-counters
+include ../components/_ui-quote
+include ../sections/_google-map
+include ../sections/_header-modern
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'About Us'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do   <br class="d-none d-md-block">eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+	})
+
+	// Section About
+	section.section.section-xl.bg-default.text-md-left
+		.container: .row.row-40.row-md-60.justify-content-center.align-items-xl-center
+			.col-md-11.col-lg-6.col-xl-5
+				+quote-classic-big({
+					text: 'A Few words About Us'
+				}).inset-xl-right-30
+				// Bootstrap tabs
+				#tabs-1.tabs-custom.tabs-horizontal.tabs-line
+					// Nav tabs
+					.nav-tabs-wrap: ul.nav.nav-tabs
+						li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-bs-toggle='tab') About
+						li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-bs-toggle='tab') Our mission
+						li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-3' data-bs-toggle='tab') Our goals
+
+					// Tab panes
+					.tab-content
+						div#tabs-1-1.tab-pane.fade.show.active
+							p Eget sit amet tellus cras adipiscing enim. Tempus imperdiet nulla malesuada pellentesque elit. Eros in cursus turpis massa tincidunt.
+							p Lacus suspendisse faucibus interdum posuere lorem. Elit duis tristique sollicitudin nibh. Dui ut ornare lectus sit amet. Phasellus egestas tellus rutrum tellus elementum.
+
+						div#tabs-1-2.tab-pane.fade
+							p Vae. Dexter fiscina aliquando vitares animalis est. Nunquam convertam bulla. Cum pars prarere, omnes seculaes. A cras semper auctor neque vitae tempus quam pellentesque.
+							p Navis dexter historia est. Luba, homo, et indictio. Emeritis eposs ducunt ad animalis. Cum solem assimilant, omnes byssuses vitare clemens, secundus nixuses.
+
+						div#tabs-1-3.tab-pane.fade
+							p Eu augue ut lectus arcu bibendum at varius. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Orci eu lobortis elementum nibh tellus molestie nunc non.
+							p Mi proin sed libero enim sed faucibus turpis in eu. Sit amet purus gravida quis blandit turpis cursus in. Viverra aliquet eget sit amet tellus.
+
+				a.button.button-lg.button-primary.button-zakaria( href='#' ) Read more
+
+			.col-md-11.col-lg-6.col-xl-7
+				.slick-slider-1.inset-xl-left-35
+					// Slick Carousel
+					#carousel-parent.slick-slider.carousel-parent( data-items='1' data-autoplay='true' data-slide-effect='true' data-child='#child-carousel' data-for='#child-carousel' )
+						.item: +img('about-1-634x373')
+						.item: +img('about-2-634x373')
+						.item: +img('about-3-634x373')
+						.item: +img('about-4-634x373')
+
+					#child-carousel.slick-slider.child-carousel.slick-nav-1( data-items='2' data-sm-items='4' data-md-items='4' data-lg-items='4' data-xl-items='4' data-xxl-items='4' data-arrows='true' data-for='#carousel-parent' )
+						.item: +img('about-1-143x114')
+						.item: +img('about-2-143x114')
+						.item: +img('about-3-143x114')
+						.item: +img('about-4-143x114')
+
+	// Section History
+	section.section.section-fluid.section-xl.section-bottom-0.bg-image-2.section-relative
+		.container-fluid
+			h2 Our History
+			.slick-history
+				// Slick Carousel
+				#carousel-parent-2.slick-slider.carousel-parent( data-items='1' data-sm-items='2' data-md-items='2' data-lg-items='3' data-xl-items='3' data-xxl-items='4' data-autoplay='false' data-loop='false' )
+					.item: .box-info-classic
+						h4.box-info-classic-title Establishment
+						p.box-info-classic-text Duis ultricies lacus sed turpis tincidunt id aliquet risus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin.
+					.item: .box-info-classic
+						h4.box-info-classic-title Opening the First Store
+						p.box-info-classic-text Nibh nisl condimentum id venenatis a condimentum vitae. Sapien eget mi proin accumsan tortor posuere ac ut consequat.
+					.item: .box-info-classic
+						h4.box-info-classic-title Partnership
+						p.box-info-classic-text On nisi est sit amet facilisis magna etiam tempor orci. Volutpat consequat mauris nunc congue nisi vitae orci porta.
+					.item: .box-info-classic
+						h4.box-info-classic-title National Recognition
+						p.box-info-classic-text Volutpat est velit egestas dui id. Lorem donec massa sapien faucibus et molestie ac consequat nisl vel pretium lectus.
+					.item: .box-info-classic
+						h4.box-info-classic-title 20-Year Anniversary
+						p.box-info-classic-text Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. At consectetur lorem donec massa sapien eleifend in.
+
+				.slick-slider.child-carousel( data-items='1' data-sm-items='2' data-md-items='2' data-lg-items='3' data-xl-items='3' data-xxl-items='4' data-arrows='true' data-for='#carousel-parent-2' data-loop='false' data-focus-select='false' )
+					.item: .heading-5.box-info-classic-year 1999
+					.item: .heading-5.box-info-classic-year 2003
+					.item: .heading-5.box-info-classic-year 2007
+					.item: .heading-5.box-info-classic-year 2015
+					.item: .heading-5.box-info-classic-year 2020
+
+	// Our team
+	section.section.section-xl.bg-default
+		.container
+			h2 Our team
+			// Owl Carousel
+			.owl-carousel( data-items='1' data-sm-items='2' data-md-items='3' data-margin='30' data-dots='true' data-autoplay='false' )
+				+team-classic({
+					img: 'team-4-370x334',
+					name: 'Richard Smith',
+					text: 'Pellentesque habitant morbi tristique senectus et feugiat pretium nibh.'
+				})
+				+team-classic({
+					img: 'team-5-370x334',
+					name: 'Susan Anderson',
+					text: 'Urna nec tincidunt praesent semper feugiat nibh sed pulvinar senectus.'
+				})
+				+team-classic({
+					img: 'team-6-370x334',
+					name: 'Steve Ruffalo',
+					text: 'Lorem dolor sed viverra ipsum. Donec ac odio tempor orci dapibus ultrices.'
+				})
+				+team-classic({
+					img: 'team-4-370x334',
+					name: 'Richard Smith',
+					text: 'Pellentesque habitant morbi tristique senectus et feugiat pretium nibh.'
+				})
+				+team-classic({
+					img: 'team-5-370x334',
+					name: 'Susan Anderson',
+					text: 'Urna nec tincidunt praesent semper feugiat nibh sed pulvinar senectus.'
+				})
+				+team-classic({
+					img: 'team-6-370x334',
+					name: 'Steve Ruffalo',
+					text: 'Lorem dolor sed viverra ipsum. Donec ac odio tempor orci dapibus ultrices.'
+				})
+	// Counter Modern
+	section.section.section-xxl.bg-primary
+		.container: .row.row-30.justify-content-center
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '245',
+					title: 'Products <br class="d-none d-sm-block"> sold'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '382',
+					title: 'Reliable <br class="d-none d-sm-block"> partners'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '1267',
+					title: 'Satisfied<br class="d-none d-sm-block"> customers'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '45',
+					title: 'Team <br class="d-none d-sm-block"> Members'
+				})
+
+	// Testimonials
+	section.section.section-xl.bg-gray-1
+		.container
+			h2 Testimonials
+			// Owl Carousel
+			.owl-carousel.owl-style-1( data-items='1' data-sm-items='2' data-margin='30' data-dots='true' data-autoplay='true' )
+				+quote-modern({
+					img: 'user-10-62x62',
+					author: 'Patrick Goodman',
+					status: 'Client',
+					text: 'Commodo viverra maecenas accumsan lacus vel. Bibendum at varius vel pharetra vel turpis nunc eget malesuada proin libero nunc consequat. '
+				})
+				+quote-modern({
+					img: 'user-11-62x62',
+					author: 'Jane Lee',
+					status: 'Client',
+					text: 'Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Accumsan sit amet nulla facilisi morbi tempus iaculis elementum nisi.'
+				})
+				+quote-modern({
+					img: 'user-5-62x62',
+					author: 'James Peterson',
+					status: 'Client',
+					text: 'Semper viverra nam libero justo. Amet est placerat in egestas erat imperdiet sed euismod nisi. Arcu odio ut sem nulla pharetra convallis.'
+				})
+				+quote-modern({
+					img: 'user-6-62x62',
+					author: 'Ann McMillan',
+					status: 'Client',
+					text: 'Vitae turpis massa sed elementum. Nam at lectus urna duis convallis convallis. Ipsum a arcu cursus lobortis scelerisque fermentum dui.'
+				})
+
+	// Section Clients
+	section.section.section-xl.bg-default
+		.container
+			.owl-carousel.owl-style-2( data-items='2' data-sm-items='3' data-md-items='4' data-lg-items='5' data-margin='30' data-dots='true' )
+				a.clients-classic( href='#' ): +png( 'clients-1-120x114' )
+				a.clients-classic( href='#' ): +png( 'clients-2-105x118' )
+				a.clients-classic( href='#' ): +png( 'clients-3-111x98' )
+				a.clients-classic( href='#' ): +png( 'clients-4-122x92' )
+				a.clients-classic( href='#' ): +png( 'clients-5-112x112' )
+
+	section.section
+		+google-map
+
+	// Page Footer
+	include ../sections/_footer-modern

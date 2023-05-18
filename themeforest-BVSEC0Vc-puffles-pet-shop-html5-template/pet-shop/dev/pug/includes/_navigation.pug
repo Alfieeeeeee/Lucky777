@@ -1,0 +1,39 @@
+// RD Navbar Nav
+ul.rd-navbar-nav
+	each item in menu
+		li.rd-nav-item(class={active: activeCategory === item.category})
+			a.rd-nav-link(href=item.link ? item.link : genLink(item.title))=item.title
+			//- Megamenu handler
+			if(typeof(item.megamenu) !== 'undefined')
+				// RD Navbar Megamenu
+				ul.rd-menu.rd-navbar-megamenu
+					each column in item.megamenu
+						li.rd-megamenu-item(class= column.itemClass)
+							if(typeof(column.title) != 'undefined')
+								.rd-megamenu-title
+									span.rd-megamenu-icon.linear-icon(class= column.icon)
+									span.rd-megamenu-text=column.title
+							if (typeof(column.list) !== 'undefined')
+								ul.rd-megamenu-list(class= column.listClass)
+									each listItem in column.list
+										li.rd-megamenu-list-item: a.rd-megamenu-list-link(href=listItem.link ? listItem.link : genLink(listItem.title))=listItem.title
+
+					li.rd-megamenu-item.rd-megamenu-banner
+						.rd-megamenu-title
+							span.rd-megamenu-icon.mdi.mdi-gift.linear-icon
+							span.rd-megamenu-text Browse Our Shop
+						a.banner-classic(href=links.shop): +img('banner-1-300x202')
+
+			//- Dropdown menu handler
+			if(typeof(item.dropdown) !== 'undefined')
+				// RD Navbar Dropdown
+				ul.rd-menu.rd-navbar-dropdown
+					each subItem1 in item.dropdown
+						li.rd-dropdown-item: a.rd-dropdown-link(href=subItem1.link ? subItem1.link : genLink(subItem1.title))=subItem1.title
+
+						//- Submenu 2 lvl handler
+						if(typeof(subItem1.dropdown) !== 'undefined')
+							// RD Navbar Dropdown
+							ul.rd-menu.rd-navbar-dropdown
+								each subItem2 in subItem1.dropdown
+									li.rd-dropdown-item: a.rd-dropdown-link(href=subItem2.link ? subItem2.link : genLink(subItem2.title))=subItem2.title

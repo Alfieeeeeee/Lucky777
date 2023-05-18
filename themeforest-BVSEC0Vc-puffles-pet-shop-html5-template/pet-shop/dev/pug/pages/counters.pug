@@ -1,0 +1,70 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-counters
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'elements'
+	- var pageName = 'Counters'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Counter Classic
+	section.section.section-xl.bg-default
+		.container
+			.row.row-30.justify-content-center.bordered-1
+				.col-sm-4
+					+counter-classic({
+						number: '245',
+						title: 'Products sold <br class="d-none d-sm-block"> annually'
+					})
+				.col-sm-4
+					+counter-classic({
+						number: '47',
+						title: 'Qualified Team <br class="d-none d-sm-block"> Members'
+					})
+				.col-sm-4
+					+counter-classic({
+						number: '382',
+						title: 'Reliable partners<br class="d-none d-sm-block"> across the USA'
+					})
+	='\n'
+
+	// Counter Modern
+	+parallax({
+		img: 'bg-cta-1',
+		innerClass: 'section-xxl context-dark overlay-darken'
+	})
+		.container: .row.row-30.justify-content-center
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '245',
+					title: 'Products <br class="d-none d-sm-block"> sold'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '382',
+					title: 'Reliable <br class="d-none d-sm-block"> Partners'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '1267',
+					title: 'Satisfied<br class="d-none d-sm-block"> Customers'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '474',
+					title: 'Team <br class="d-none d-sm-block"> Members'
+				})
+
+
+	include ../sections/_footer-modern

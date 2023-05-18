@@ -1,0 +1,23 @@
+.table-custom-responsive
+	table.table-custom.table-cart
+		thead
+			tr
+				th Product name
+				th Price
+				th Quantity
+				th Total
+		tbody
+			tr
+				td
+					a.table-cart-figure.link-img(href=links.product): +img('product-big-1-328x330')
+					a.table-cart-link(href=links.product) Deep Dish Cuddler
+				td $23.00
+				td: div.table-cart-stepper: input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+				td $23
+			tr
+				td
+					a.table-cart-figure.link-img(href=links.product): +img('product-big-2-328x330')
+					a.table-cart-link(href=links.product) Zoo Fun Dog Collars
+				td $11.00
+				td: div.table-cart-stepper: input.form-input(type="number" data-zeros="true" value="1" min="1" max="1000")
+				td $11

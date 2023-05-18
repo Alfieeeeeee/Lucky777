@@ -1,0 +1,75 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/card
+
+block variables
+    - pageName = 'Single service';
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    //Intro
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-30
+                .col-md-5
+                    +img('single-service-01-500x600').img-rounded
+                .col-md-7.col-xl-6.offset-xl-1
+                    h2.h3 Dental care
+                    p.lead You'll be surprised at how affordable our dental care can be with Puffles.
+                    p.lead Our affordable dental care and cleaning offers early detection & prevention that saves our clients even more.
+                    p.lead Our prices are much less than the national average. We focus on using state-of-the-art technology that saves us money, and we pass those savings to you.
+                    p.h3.mt-md-5.text-primary Here are some symptoms that you may observe if your pet is having dental issues:
+                    ul.list.list-lead.lead.mt-md-4
+                        li Non, mollis risus sed mauris arcu vulputate aliquam interdum.
+                        li Mi posuere cursus neque in elit egestas.
+                        li Nascetur nisl aliquet tellus tellus donec.
+                        li Quis nisl, urna facilisis vitae, nullam amet.Lorem odio eget et in leo.
+                        li Morbi ultrices imperdiet in in. Urna mattis felis velit, mauris malesuada.
+                    p.lead.mt-md-5 Changes in your pet's behavior should always prompt a visit to your local Puffles for a check-up. Some pets can become irritable or stressed when they have dental problems. Exercise caution when evaluating your pet's mouth because a pet may bite when experiencing pain.
+                    a( href="#" ).btn.btn-primary.btn-circle Book an appointment
+
+    //Accordion
+    section.section.section-lg.bg-primary-light
+        .container
+            .text-center
+                h2.h3 Most popular questions
+                p.lead See what we can do for you!
+            .row.row-50.justify-content-center
+                .col-lg-10
+                    #accordion1.card-group-custom.card-group-corporate( role='tablist' aria-multiselectable='false' )
+                        +card({
+                            show: true,
+                            parentId: 'accordion1',
+                            title: 'What can I do at home for my pet’s oral health?'
+                        }).card-corporate
+                            p Vulputate diam proin et rhoncus, et nisi, faucibus platea. Condimentum nisl sodales in enim eget netus libero. Viverra enim lacus tristique imperdiet vulputate nulla nisi pretium tincidunt. Elementum, consectetur vitae mauris, tempus lectus blandit. Elementum quis interdum in ac.
+
+                        +card({
+                            parentId: 'accordion1',
+                            title: 'Do I really need to have my pet vaccinated?'
+                        }).card-corporate
+                            p Curabitur ac erat sit amet erat pharetra placerat. Pellentesque placerat, turpis nec sodales lobortis, tellus eros mattis urna, nec pulvinar justo orci rhoncus velit. Aenean vitae quam vel augue hendrerit elementum. Curabitur rutrum dui sed ultricies facilisis. Etiam blandit dolor
+                        +card({
+                            parentId: 'accordion1',
+                            title: 'How do I know what my pet needs?'
+                        }).card-corporate
+                            p Fusce vitae ante vitae ex ultricies pellentesque. Sed ante metus, mattis in interdum nec, lobortis faucibus ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non.
+                        +card({
+                            parentId: 'accordion1',
+                            title: 'When should I bring my new pet in?'
+                        }).card-corporate
+                            p Suspendisse euismod est et rutrum porta. Nunc mollis condimentum purus non commodo. Ut molestie, erat vitae luctus suscipit, erat ligula pharetra urna, id euismod leo nisl cursus elit. Aliquam ornare ut tellus id sagittis. Sed convallis ornare purus, non eleifend nisl.
+                        +card({
+                            parentId: 'accordion1',
+                            title: 'Do I need an appointment?'
+                        }).card-corporate
+                            p Donec iaculis dui lectus, et vestibulum tellus aliquam a. Nam pharetra hendrerit vehicula. Nulla feugiat posuere rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin dictum sit amet odio vitae ultricies. Suspendisse ut.
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

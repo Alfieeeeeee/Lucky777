@@ -1,0 +1,70 @@
+/** @section Links */
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.link-arrow {
+	position: relative;
+	z-index: 0;
+	display: inline-block;
+	font-weight: 500;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: inherit;
+	@include text-truncate;
+
+	&::before {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		z-index: -1;
+		width: 0;
+		height: 6px;
+		content: '';
+		background-color: $primary;
+		border-radius: $border-radius-sm;
+		transform: translateX( -50% );
+		transition: $transition-base;
+	}
+
+	> * {
+		vertical-align: middle;
+	}
+
+	.icon {
+		fill: $body-color;
+		margin-left: 4px;
+	}
+
+	&:hover {
+		color: inherit;
+
+		&::before {
+			width: 100%;
+		}
+	}
+}

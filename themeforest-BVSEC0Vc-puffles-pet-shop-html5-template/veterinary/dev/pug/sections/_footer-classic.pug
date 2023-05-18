@@ -1,0 +1,33 @@
+footer.section.footer.footer-sm.bg-primary.text-400.context-dark
+	.container
+		.row.row-30
+			.col-md-4.col-lg-3.wow.fadeInRight
+				.footer-title.h5 Contact Us
+				ul.list.footer-contact-list
+					li.list-item.list-item-phone P:
+						a( href='tel:#' ) (+844) 123 456 78
+					li.list-item.list-item-link: u: a.link-inherit( href='mailto:#' ) info@demolink.org
+				+list-social(['icomoon-youtube','icomoon-facebook','icomoon-instagram','icomoon-twitter','icomoon-telegram']).mt-4
+			.col-auto.col-xs-6.col-md-4.col-lg-3.wow.fadeInRight( data-wow-delay='.2s' )
+				.footer-title.h5 Our Address
+				p 178 West 27th Street, Suite 527
+					| #[br]
+					| New York NY 10012
+			.col-auto.col-xs-6.col-md-4.col-lg-3.wow.fadeInRight( data-wow-delay='.3s' )
+				.footer-title.h5 Consulting hours
+				ul.list
+					li.list-item 9 am to 5 pm on Weekdays
+					li.list-item 10 am to 12 noon on Saturday
+			.col-md-6.col-lg-3.wow.fadeInRight( data-wow-delay='.4s' )
+				.footer-title.h5 Subscribe to our newsletter
+					p Stay up to date with the latest news and updates of our veterinary clinic.
+					form.rd-form.rd-mailform.footer-form(data-form-output='form-output-global', data-form-type='subscribe', method='post', action='bat/rd-mailform.php' novalidate='novalidate')
+						.row.row-20.row-md-30
+							.col-12: .form-wrap
+								input#contact-email-2.footer-input-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+								label.form-label(for='contact-email-2') Your email *
+								button.btn.btn-icon.mdi.mdi-email-outline.mt-0( type='submit' )
+
+				#form-output-subscribe.form-output.snackbar.snackbar-secondary
+
+		+rights

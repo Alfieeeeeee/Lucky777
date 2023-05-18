@@ -1,0 +1,83 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-thumbnail
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'gallery'
+	- var pageName = 'Grid Gallery'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Grid Gallery
+	section.section.section-xl.bg-default
+		.container.isotope-wrap
+			.isotope-filters
+				//- Isotope Filters
+				button.isotope-filters-toggle.button.button-sm.button-icon.button-icon-right.button-default-outline(data-custom-toggle='.isotope-filters-list', data-custom-toggle-disable-on-blur="true")
+					span.icon.mdi.mdi-chevron-down
+					| Filter
+
+				.isotope-filters-list-wrap
+					ul.isotope-filters-list
+						li: a.active(href='#', data-isotope-filter='*') All Types
+						li: a(href='#', data-isotope-filter='Type 1') Dogs
+						li: a(href='#', data-isotope-filter='Type 2') Cats
+
+			.row.row-30.isotope(data-lightgallery='group')
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-classic({
+						img: 'grid-gallery-1-370x315',
+						imgOriginal: 'grid-gallery-1-1200x800-original',
+						title: 'Cat food',
+						price: '13'
+					})
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-gallery-2-370x315',
+						imgOriginal: 'grid-gallery-2-1200x800-original',
+						title: 'Dog training',
+						price: '11'
+					})
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-gallery-3-370x315',
+						imgOriginal: 'grid-gallery-3-1200x800-original',
+						title: 'Dog daycare',
+						price: '10'
+					})
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-gallery-4-370x315',
+						imgOriginal: 'grid-gallery-4-1200x800-original',
+						title: 'Grooming',
+						price: '12'
+					})
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-gallery-5-370x315',
+						imgOriginal: 'grid-gallery-5-800x1200-original',
+						title: 'Dog clothing',
+						price: '14'
+					})
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-classic({
+						img: 'grid-gallery-6-370x315',
+						imgOriginal: 'grid-gallery-6-1200x800-original',
+						title: 'Adoption',
+						price: '17'
+					})
+				.col-1
+
+
+	// Page Footer
+	include ../sections/_footer-modern

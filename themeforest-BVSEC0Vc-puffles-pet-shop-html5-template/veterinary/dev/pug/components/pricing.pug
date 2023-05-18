@@ -1,0 +1,15 @@
+//- Pricing
+
+mixin pricing-classic(data)
+    article.pricing-classic&attributes(attributes)
+        .pricing-classic-header
+            h3= data.title
+            .h4.pricing-classic-tariff.text-primary
+                span.pricing-classic-symbol $
+                span.pricing-classic-price= data.price
+                span.pricing-classic-divider /
+                span.pricing-classic-period month
+        .pricing-classic-body
+            p.pricing-classic-text= data.text
+            block
+            a(href="#").btn.btn-primary.btn-circle Purchase now

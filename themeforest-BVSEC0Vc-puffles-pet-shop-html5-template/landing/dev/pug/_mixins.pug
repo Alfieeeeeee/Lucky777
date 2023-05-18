@@ -1,0 +1,80 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg( name ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+		block
+
+
+//- Main Navigation
+mixin navigation( menu, type )
+	if( !type )
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				li.rd-nav-item( class= { active: item.active } )
+					a.rd-nav-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+					if( item.megamenu )
+						+navigation( item.megamenu, 'megamenu' )
+
+	else if( type === 'dropdown' )
+		ul.rd-menu.rd-navbar-dropdown
+			each item in menu
+				li.rd-dropdown-item( class= { active: item.active } )
+					a.rd-dropdown-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+
+	else if( type === 'megamenu' )
+		ul.rd-menu.rd-navbar-megamenu
+			each item in menu
+				li.rd-megamenu-item
+					if ( item instanceof Array )
+						+navigation( item, 'column' )
+					else
+						+navigation( item, 'block' )
+
+	else if( type === 'column' )
+		each item in menu
+			+navigation( item, 'block' )
+
+	else if( type === 'block' )
+		if (menu.title && menu.link)
+			h6.rd-megamenu-title: a( href= menu.link )= menu.title
+		else if (menu.title)
+			h6.rd-megamenu-title= menu.title
+		if (menu.list)
+			+navigation( menu.list, 'list' )
+
+	else if( type === 'list' )
+		ul.rd-megamenu-list
+			each item in menu
+				li.rd-megamenu-list-item
+					a.rd-megamenu-list-link( href= item.link )= item.title
+
+
+//- Logo
+mixin logo
+	//Brand
+	a.brand( href='index.html' )&attributes( attributes )
+		+img( logo.default, { retina: true } ).brand-logo-dark
+		+img( logo.inverse, { retina: true } ).brand-logo-light
+
+
+//- Copyright
+mixin box-demo( data )
+	.box-demo&attributes( attributes )
+		a.box-demo-media( href= data.link )
+			span.box-demo-placeholder.h2 Coming soon
+			if ( data.img )
+				span.box-demo-img( style='background-image:url(images/' + data.img +  '.jpg);' )
+		h5.text-center.box-demo-title!= data.title

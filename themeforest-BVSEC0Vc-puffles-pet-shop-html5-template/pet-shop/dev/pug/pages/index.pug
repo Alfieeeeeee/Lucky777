@@ -1,0 +1,343 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-modern
+include ../components/_ui-product
+include ../components/_ui-box-icon
+include ../svg-icons/_ui-svg-icons
+include ../components/_ui-team
+include ../components/_ui-quote
+include ../components/_ui-posts
+
+block variables
+	-
+		var
+		activeCategory = 'home',
+		pageName = 'Home';
+
+block page
+	// Page Header
+	+header-modern
+
+	// Main screen
+	section.section.section-xxl.bg-primary.context-dark.bg-position-1.bg-ovrlay(style="background-image: url('images/home-bg-1.jpg')")
+			.container
+				.row.justify-content-start
+					.col-xl-7.col-md-8.text-start
+						h1.lt-spacing-normal( data-caption-animate='fadeInLeft', data-caption-delay='100' ) Puffles
+						h3.lt-spacing-75.offset-top-10.text-transform-uppercase.heading-devider Make Your pets Happy
+						h4.lt-spacing-100.offset-top-25.fw-regular( data-caption-animate='fadeInLeft', data-caption-delay='400' ) Our Pet Shop values quality, comfort, and individuality of our products and services.
+						.button-wrap( data-caption-animate='fadeInLeft', data-caption-delay='550' )
+							a.button.button-lg.button-primary( href=links.shop ) Read more
+
+
+
+	// About Us
+	section.section.section-xl.section-last.bg-default
+		.container
+			h2.wow.fadeScale Featured products
+			// Owl Carousel
+			.owl-carousel.owl-style-8( data-loop="false", data-items='1' data-sm-items='2' data-lg-items='3' data-margin='30' data-dots='true' data-mouse-drag='false' )
+				article.box-info-modern.wow.slideInUp( data-wow-delay='.1s' )
+					a.box-info-modern-figure.link-img( href=links.about ): +img('about-1-370x276')
+					h4.box-info-modern-title: a( href=links.about ) Best pets clothing
+					a.box-info-modern-link( href=links.about ) more
+
+				article.box-info-modern.wow.slideInUp
+					a.box-info-modern-figure.link-img( href=links.about ): +img('about-2-370x276')
+					h4.box-info-modern-title: a( href=links.about ) Grooming supplies
+					a.box-info-modern-link( href=links.about ) more
+
+				article.box-info-modern.wow.slideInUp( data-wow-delay='.1s' )
+					a.box-info-modern-figure.link-img( href=links.about ): +img('about-3-370x276')
+					h4.box-info-modern-title: a( href=links.about ) Pet food
+					a.box-info-modern-link( href=links.about ) more
+
+
+	// New products
+	section.section.section-xl.section-last.bg-gray-1
+		.container
+			h2.inset-sm-20.inset-xl-50 What we offer
+			.row.row-50
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Grooming',
+						icon: 'icon-01-50x50.png',
+						text: 'Let your pets enjoy the first-class grooming services provided by our certified and experienced groomers.'
+					})
+
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Pet hotel',
+						icon: 'icon-02-50x42.png',
+						text: 'At Puffles, we offer a safe & clean environment with playtime, exercises, healthy meals & more.'
+					})
+
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Dog daycare',
+						icon: 'icon-03-48x50.png',
+						text: 'Our daytime guests enjoy playtime with other dogs in a safe and fun environment.'
+					})
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Dog training',
+						icon: 'icon-04-42x50.png',
+						text: 'Our accredited pet trainers teach fun & eﬀective group & private classes through positive reinforcement.'
+					})
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Veterinary care',
+						icon: 'icon-05-42x50.png',
+						text: 'Save your pet the discomfort of advanced illness & help save you the stress & expense of treatment.'
+					})
+
+				.col-sm-6.col-md-4
+					+box-icon-classic({
+						mod: 'text-sm-left',
+						unit: 'flex-column flex-sm-row flex-md-column flex-xl-row',
+						title: 'Adoption',
+						icon: 'icon-06-50x44.png',
+						text: 'Whether you adopt online or at a Puffles store near you, you’re helping change the life of a pet in need.'
+					})
+
+	// CTA
+	section.section.section-xxl.bg-primary.context-dark.bg-position-2.text-start(style="background-image: url('images/bg-cta.jpg')")
+		.container
+			.row
+				.col-md-7
+					h2.wow.fadeInRight Hurry up!
+					h4.wow.fadeInRight( data-wow-delay='.1s' ) Save 50% on all items your first order
+					p.wow.fadeInRight( data-wow-delay='.2s' ) Shop today to save big on your first order at Puffles Store and get everything that your dog needs to stay healthy and happy.
+					a.button.button-lg.button-primary.button-zakaria.wow.fadeInUp( href=links.shop ) Shop now
+
+
+	section.section.section-xxl.bg-gray-1
+		.container
+			h2.wow.fadeScale Products
+			// Owl Carousel
+			.owl-carousel.owl-style-9( data-items='1' data-sm-items='2' data-md-items='3' data-lg-items='4' data-margin='30' data-dots='true' )
+				+product({
+					img: 'product-01-200x200',
+					title: 'Deep Dish Cuddler',
+					price: '23',
+					priceOld: '30'
+				})
+				+product({
+					img: 'product-02-200x200',
+					title: 'Zoo Fun Dog Collars',
+					price: '11'
+				})
+				+product({
+					img: 'product-03-200x200',
+					title: 'Glendan Dog Brush',
+					price: '17',
+					new: 'true'
+				})
+				+product({
+					img: 'product-04-200x200',
+					title: 'Pet Food Bowl',
+					price: '12'
+				})
+				+product({
+					img: 'product-01-200x200',
+					title: 'Deep Dish Cuddler',
+					price: '23',
+					priceOld: '30'
+				})
+				+product({
+					img: 'product-02-200x200',
+					title: 'Zoo Fun Dog Collars',
+					price: '11'
+				})
+				+product({
+					img: 'product-03-200x200',
+					title: 'Glendan Dog Brush',
+					price: '17',
+					new: 'true'
+				})
+				+product({
+					img: 'product-04-200x200',
+					title: 'Pet Food Bowl',
+					price: '12'
+				})
+				+product({
+					img: 'product-01-200x200',
+					title: 'Deep Dish Cuddler',
+					price: '23',
+					priceOld: '30'
+				})
+				+product({
+					img: 'product-02-200x200',
+					title: 'Zoo Fun Dog Collars',
+					price: '11'
+				})
+				+product({
+					img: 'product-03-200x200',
+					title: 'Glendan Dog Brush',
+					price: '17',
+					new: 'true'
+				})
+				+product({
+					img: 'product-04-200x200',
+					title: 'Pet Food Bowl',
+					price: '12'
+				})
+	// About Us
+	section.section.section-xl.bg-default
+		.container
+			h2.wow.fadeScale About us
+			.row.row-30.row-lg.justify-content-center
+				.col-sm-8.col-md-7.col-lg-6.wow.fadeInLeft: +img('about-4-570x511')
+				.col-md-10.col-lg-6.wow.fadeInRight
+					// Bootstrap tabs
+					#tabs-1.tabs-custom.tabs-jean
+						// Tab panes
+						.tab-content
+							div#tabs-1-1.tab-pane.fade.show.active
+								.box-info-creative
+									h4.box-info-creative-title: a( href='#' ) Our Pet Shop’s mission lies in providing quality care for pets.
+									.box-info-creative-text We want our clients and their pets to receive the best service and goods, that’s why we work only with proven and respected manufacturers.
+									a.link-classic.box-info-creative-link( href='#' ) Read more
+							div#tabs-1-2.tab-pane.fade
+								.box-info-creative
+									h4.box-info-creative-title: a( href='#' ) Aiming to be the leading place for pet care and shopping
+									.box-info-creative-text Our vision at Puffles is to become the #1 online store for pets as well as the space where owners can get any kind of pet-related services at an affordable price.
+									a.link-classic.box-info-creative-link( href='#' ) Read more
+							div#tabs-1-3.tab-pane.fade
+								.box-info-creative
+									h4.box-info-creative-title: a( href='#' ) We always strive for being professional and consistent
+									.box-info-creative-text Our work is defined by certain values that include excellence, care, professionalism, innovation, and consistency. We aim to provide the best pet care services to you.
+									a.link-classic.box-info-creative-link( href='#' ) Read more
+						// Nav tabs
+						.nav-tabs-wrap: ul.nav.nav-tabs
+							li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-bs-toggle='tab') Our mission
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-bs-toggle='tab') our vision
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-3' data-bs-toggle='tab') our values
+
+
+	// Out Team
+	section.section.section-xxl.bg-gray-1
+		.container
+			h2.wow.fadeScale Our team
+			// Owl Carousel
+			.owl-carousel.owl-style-10( data-items='1' data-sm-items='2' data-lg-items='3' data-margin='30' data-dots='true' data-mouse-drag='false' )
+				+team-creative({
+					img: 'team-8-249x249',
+					name: 'Richard Smith',
+					text: 'Senior salesman with 15 years of experience. He knows everything about the pet products he offers.'
+				}).wow.slideInUp( data-wow-delay='.1s' )
+				+team-creative({
+					img: 'team-9-249x249',
+					name: 'Susan Anderson',
+					text: 'Mega positive shop assistant who is always ready to help you make the right choice and charm you with a smile.'
+				}).wow.slideInUp
+				+team-creative({
+					img: 'team-10-249x249',
+					name: 'Steve Ruffalo',
+					text: 'Steve is the leading groomer at Puffles. He is always ready to make your pet look and feel good.'
+				}).wow.slideInUp( data-wow-delay='.1s' )
+
+
+	// CTA 2
+	section.section.section-xxl.section-inset-1.bg-image(style='background-image: url(images/bg-cta-1.jpg);')
+		.container.box-cta
+			h2.wow.fadeInDown Dog & cat treats
+			h4.wow.fadeScale Pamper your pets with our range of quality dog & cat treats
+			a.button.button-lg.button-primary.wow.fadeInUp.btn-one( href=links.shop ) Shop now
+
+
+	// Out Clients
+	section.section.section-xxl.bg-default
+		.container
+			h2.wow.fadeScale What Our Clients Say
+			// Owl Carousel
+			.owl-carousel.owl-style-11( data-items='1' data-sm-items='2' data-margin='30' data-dots='true' data-autoplay='false' )
+				+quote-carly({
+					mod: 'quote-carly-1',
+					text: 'The daycare service provided by Puffles is a real timesaver for me. I’m always calm and happy that my dog is treated well.',
+					img: 'user-10-62x62',
+					author: 'Brian Foster',
+					status: 'Client'
+				})
+				+quote-carly({
+					mod: 'quote-carly-1',
+					text: 'Puffles has the best selection of food and supplies for cats and dogs. I highly recommend this site to every pet owner.',
+					img: 'user-11-62x62',
+					author: 'Kathryn Evans',
+					status: 'Client'
+				})
+				+quote-carly({
+					mod: 'quote-carly-1',
+					text: 'I like the vast choice of cat food that this pet shop provides. Being a regular client here for 3 years, I am 100% satisfied by Puffles.',
+					img: 'user-5-62x62',
+					author: 'Evan Williams',
+					status: 'Client'
+				})
+				+quote-carly({
+					mod: 'quote-carly-1',
+					text: 'The supportive team of this online store helped me in choosing exactly what my dachshund needs right now. Thank you!',
+					img: 'user-6-62x62',
+					author: 'Emily jameson',
+					status: 'Client'
+				})
+
+
+	// Latest News
+	section.section.section-xxl.bg-gray-1
+		.container
+			h2.wow.fadeScale Latest News
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-8.col-md-6.wow.fadeInLeft
+					+post-nikki-2({
+						img: 'post-1-570x461',
+						time: {
+							datetime: '2020-09-08',
+							dateText: 'August 9, 2020'
+						},
+						title: 'Deciphering your cat’s language'
+					})
+				.col-md-6: .row.row-30
+					.col-6.col-md-12.wow.fadeInRight
+						+post-nikki({
+							unit: 'flex-column flex-md-row align-items-center',
+							img: 'post-2-270x215',
+							time: {
+								datetime: '2020-09-08',
+								dateText: 'August 9, 2020'
+							},
+							title: 'Easy tricks to teach your dog'
+						})
+					.col-6.col-md-12.wow.fadeInRight
+						+post-nikki({
+							unit: 'flex-column flex-md-row align-items-center',
+							img: 'post-3-270x215',
+							time: {
+								datetime: '2020-09-08',
+								dateText: 'August 9, 2020'
+							},
+							title: '8 tips for taking the perfect photo of your pet'
+						})
+
+
+	// Section Clients
+	section.section.section-xl.bg-primary
+		.container
+			.owl-carousel.owl-style-2( data-items='2' data-sm-items='3' data-md-items='4' data-lg-items='5' data-margin='30' data-dots='true' )
+				a.clients-classic( href='#' ): +png('clients-1-120x114')
+				a.clients-classic( href='#' ): +png('clients-2-105x118')
+				a.clients-classic( href='#' ): +png('clients-3-111x98')
+				a.clients-classic( href='#' ): +png('clients-4-122x92')
+				a.clients-classic( href='#' ): +png('clients-5-112x112')
+	// Page Footer
+	include ../sections/_footer-modern

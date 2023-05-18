@@ -1,0 +1,113 @@
+/** @section Buttons */
+
+// Button General Styles
+.btn {
+	position: relative;
+	overflow: hidden;
+	//text-transform: $btn-text-transform;
+	text-overflow: ellipsis;
+	
+	font-family: $font-family-sec;
+	padding: 15px 55px;
+	font-size: 18px;
+	font-weight: 600;
+	color: $white;
+	border-radius: 10px;
+}
+
+.page {
+	.btn {
+		&:not([class*='shadow']) {
+			box-shadow: none;
+		}
+
+		&:not(:disabled):not(.disabled):active:focus,
+		&:not(:disabled):not(.disabled).active:focus{
+			&:not([class*='shadow']) {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+// Appearance style
+.btn-dark {
+	@include btn-variant($white, $gray-800, $gray-800, $gray-800, $primary, $primary);
+	svg {
+		transition: inherit;
+		fill: $white;
+	}
+
+	&:hover {
+		svg {
+			fill: $gray-800;
+		}
+	}
+}
+
+// Btn with shadow
+.btn-shadow {
+	box-shadow: 0 9px 21px 0 rgba($gray-300, 0.15);
+
+	&:hover {
+		box-shadow: 0 9px 10px 0 rgba($gray-300, 0.15);
+	}
+
+	&:focus,
+	&:active {
+		box-shadow: none;
+	}
+}
+
+
+// Button Icon styles
+.btn {
+	&.btn-icon {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		vertical-align: middle;
+
+		.icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: inherit;
+			font-size: 1.55em;
+			line-height: 1em;
+		}
+
+		&-left {
+			.icon {
+				padding-right: 11px;
+			}
+		}
+
+		&-right {
+			flex-direction: row-reverse;
+
+			.icon {
+				padding-left: 11px;
+			}
+		}
+
+		&.btn-link {
+			.icon {
+				top: 5px;
+				font-size: 1em;
+			}
+		}
+
+		&.btn-xs {
+			.icon {
+				top: .05em;
+				font-size: 1.2em;
+				padding-right: 8px;
+			}
+
+			.btn-icon-right {
+				padding-left: 8px;
+			}
+		}
+	}
+}

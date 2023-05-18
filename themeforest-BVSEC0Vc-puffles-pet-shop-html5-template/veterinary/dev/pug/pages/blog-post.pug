@@ -1,0 +1,120 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/card
+include ../components/box-comment
+
+block variables
+    - pageName = 'Blog post';
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    //Main
+    section.section.section-md.bg-transparent
+        .container
+            .row.row-30.row-xl-50
+                .col-12
+                    article.row.row-30.row-xl-50.post
+                        .col-md-6.col-lg-5
+                            .post-figure
+                                +img('post-01-500x642').img-rounded
+                        .col-md-6.col-lg-5.offset-xl-1
+                            .post-body
+                                .post-meta.h6
+                                    time(datetime="2021-03-09").post-time.text-primary March 9, 2021
+                                    .post-comments Comment(s)&nbsp;
+                                        span.post-comments-value 0
+                                .post-content
+                                    h2.h3.post-title Easy tricks to teach your dog
+                                    p.lead Nam at lectus urna duis convallis convallis. Sem et tortor consequat id. Lacus laoreet non curabitur gravida lectus urna duis convallis.
+                                    p.lead Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                        .col-12
+                            .post-bottom
+                                h3.text-primary How to teach your dog properly
+                                p.lead At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                .post-quote.unit
+                                    .unit-left.mt-2.me-md-3
+                                        +img('quote.svg')
+                                    .unit-right.h3.mt-0 Trick training will stimulate your dog both mentally and
+                                        br.d-none.d-xl-block
+                                        | and will help you bond with your best friend.
+                                .post-meta.post-meta-tags
+                                    p.post-meta-title.lead.me-3 Tags:
+                                    ul.list-inline
+                                        li.post-tag.active: a(href="#") News
+                                        li.post-tag: a(href="#") Dogs
+                                        li.post-tag: a(href="#") Training
+                                        li.post-tag: a(href="#") Tips
+                .col-12
+                    .pagination-extendend
+                        .pagination-item.h6
+                            .pagination-item-label.text-primary Previous
+                            a.pagination-item-link( href="#" )
+                                span.icon.mdi.mdi-chevron-left
+                                | Deciphering your cat’s language
+                        .pagination-item.h6
+                            .pagination-item-label.text-primary Next
+                            a.pagination-item-link( href="#" ) Dog friendly summer & autumn activities
+                                span.icon.mdi.mdi-chevron-right
+
+                .col-12
+                    h4.h3.box-comment-title 3 comments
+                    +box-comment({
+                        unit: 'unit-spacing-xl',
+                        img: 'user-01-100x100',
+                        author: 'Albert Flores',
+                        text: 'In ornare quam viverra orci sagittis eu volutpat odio. Non consectetur a erat nam at lectus urna. A pellentesque sit amet porttitor eget dolor morbi non arcu.',
+                        time: {
+                            datetime: '2021-03-09',
+                            dateText: 'March 30, 2021'
+                        }
+                    })
+
+                        +box-comment({
+                            unit: 'unit-spacing-xl',
+                            img: 'user-02-100x100',
+                            author: 'Robert Fox',
+                            text: 'Tempus convallis pretium urna amet, malesuada id. Justo ac et lectus donec amet, elementum morbi viverra. Luctus ultrices sed consectetur eu sed. Ut diam convallis in.',
+                            time: {
+                                datetime: '2021-03-09',
+                                dateText: 'March 30, 2021'
+                            }
+                        })
+
+                    +box-comment({
+                        unit: 'unit-spacing-xl',
+                        img: 'user-03-100x100',
+                        author: 'Eleanor Pena',
+                        text: 'Erat quisque morbi dolor, nunc facilisis nam auctor quam. Semper nunc platea commodo et pellentesque velit. Justo, enim eros, diam mauris metus egestas quis.',
+                        time: {
+                            datetime: '2021-03-09',
+                            dateText: 'March 30, 2021'
+                        }
+                    })
+
+                .col-md-8.col-lg-7
+                    h4.h3 Leave a reply
+                    form.rd-form.rd-mailform.form-contact(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                        .row.row-20
+                            .col-12: .form-wrap
+                                label.form-label(for='contact-message-2') Your message *
+                                textarea#contact-message-2.form-input.textarea-lg(name='phone' data-constraints='@Required')
+
+                            .col-12: .form-wrap
+                                input#contact-first-name-2.form-input(type='text' name='name' data-constraints='@Required')
+                                label.form-label(for='contact-first-name-2') Your name *
+
+                            .col-12: .form-wrap
+                                input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                                label.form-label(for='contact-email') Your email *
+
+
+                        button.btn.btn-primary.btn-circle(type='submit') Submit comment
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

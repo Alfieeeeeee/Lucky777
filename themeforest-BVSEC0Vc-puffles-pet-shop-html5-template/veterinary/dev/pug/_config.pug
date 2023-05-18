@@ -1,0 +1,61 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700,900%7CWork+Sans:400",
+		logo = {
+			default: 'logo-default-111x41.svg',
+			inverse: 'logo-inverse-111x41.svg',
+			name: 'Puffles'
+		},
+		links = {
+			post: 'blog-post.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#b6c062'
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home',
+				link: 'index.html'
+			},
+			{
+				title: 'About',
+				category: 'about',
+			},
+			{
+			title: 'Blog',
+			category: 'blog',
+				dropdown: [
+					{
+						title: 'Blog post',
+					}
+				]
+			},
+			{
+				title: 'Gallery',
+				category: 'gallery'
+			},
+			{
+				title: 'Pages',
+				category: 'pages',
+				link: '#',
+				dropdown: [
+					{title: 'Services'},
+					{title: 'Single service'},
+					{title: 'Staff'},
+					{title: 'Staff member'},
+					{title: 'Privacy Policy'},
+					{title: 'Search Results'},
+				]
+			},
+			{
+				title: 'Contacts',
+				category: 'contacts'
+			}
+		],
+
+		// Predefined variables
+		breadcrumbs = [],
+		pageName = 'Home'

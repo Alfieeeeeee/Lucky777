@@ -1,0 +1,78 @@
+extends ../_skeleton
+
+//- Includes
+include ../components/social
+include ../components/card
+
+block variables
+    -  pageName = 'Staff member';
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+    //Intro
+    section.section.section-lg.bg-transparent
+        .container
+            .row.row-30
+                .col-md-5.col-xl-4
+                    .team.team-big
+                        .team-big-figure
+                            +img('team-02-390x474')
+                        .team-big-body
+                            .h4.team-big-title Contacts
+                            .team-big-phone.mt-3.text-primary
+                                span.icon.icomoon-phone &nbsp;
+                                a(href="tel:#") (+844) 123 456 78
+                            .team-big-email.mt-1 Email:
+                                a.text-primary(href="mailto:#") hello@yourdomain.com
+                            +list-social(['icomoon-facebook','icomoon-instagram','icomoon-twitter','icomoon-telegram'])
+
+
+
+                .col-md-7.offset-xl-1
+                    h2.h3 Dr. Kate Murphy
+                    h4.fw-normal.text-primary.mt-1 Veterinarian
+                    p.lead.offset-top-25.offset-top-md-40  Dr. Kate Murphy is thrilled to be joining the team at our veterinary clinic.
+                    p.lead She is beyond excited to establish special, unique bonds with each of her clients and their wonderful pets. She is passionate about veterinary dermatology and educating clients as a means to happier, healthier lives for their pets.
+
+                    h3.text-primary Specialty:
+                    p.lead Veterinarian, dermatology
+
+                    h3.text-primary Education:
+                    ul.list.list-lead.lead
+                        li University of Texas, USA (1990)
+                        li St. Louis University (St. Louis, Missouri, 2010)
+
+                    h3.text-primary Experience:
+                    p.lead 10 years
+                    a( href="#" ).btn.btn-primary.btn-circle.offset-top-50 Book an appointment
+
+    // Certification
+    section.section.section-lg.bg-primary-light
+        .container
+            .text-center
+                h2.h3 Diplomas and certificates
+                p.lead See what Dr. Murphy specializes in.
+            .row.row-30.row-xxl-50(data-lightgallery="group")
+                .col-6.col-md-3.col-xl-2.offset-xl-2.text-center
+                    .box
+                        a.box-figure(href="images/certification-01-original.jpg" data-lightgallery="item")
+                            +img("certification-01-170x130").img-rounded
+                .col-6.col-md-3.col-xl-2.text-center
+                    .box
+                        a.box-figure(href="images/certification-02-original.jpg" data-lightgallery="item")
+                            +img("certification-02-170x130").img-rounded
+                .col-6.col-md-3.col-xl-2.text-center
+                    .box
+                        a.box-figure(href="images/certification-03-original.jpg" data-lightgallery="item")
+                            +img("certification-03-170x130").img-rounded
+                .col-6.col-md-3.col-xl-2.text-center
+                    .box
+                        a.box-figure(href="images/certification-04-original.jpg" data-lightgallery="item")
+                            +img("certification-04-170x130").img-rounded
+
+    // Footer
+    include ../sections/_footer-classic
+    // Google map
+    include ../sections/_google-map

@@ -1,0 +1,59 @@
+extends  ../_skeleton
+
+//- Includes
+include ../includes/_contact-form
+include ../sections/_google-map
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'elements'
+	- var pageName = 'Contact Us'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Get in touch
+	section.section.section-xl.bg-default.text-md-left
+		.container
+			.title-classic
+				h3.title-classic-title Get in touch
+				p.title-classic-subtitle We are available 24/7 by fax, e-mail or by phone. You can also use our #[br.d-none.d-lg-block]quick contact form to ask a question about our solutions.
+			+contact-form-2
+	='\n'
+
+	// Get in touch
+	section.section.section-xl.bg-gray-4
+		.container: .row.row-30.justify-content-center
+			.col-sm-6.col-md-4
+				h4 Phones
+				ul.contacts-classic
+					li Office
+						=' '
+						a(href='tel:#') +1 (409) 987–5874
+					li Fax
+						=' '
+						a(href='tel:#') +1 (409) 987–5874
+			.col-sm-6.col-md-4
+				h4 Address
+				.contacts-classic
+					a( href='#' ) 523 Sylvan Ave, 5th Floor #[br]Mountain View, CA 94041 USA
+			.col-sm-6.col-md-4
+				h4 E-mails
+				ul.contacts-classic
+					li: a(href='mailTo:#') info@demolink.org
+					li: a(href='mailTo:#') mail@demolink.org
+	='\n'
+
+	section.section
+		+google-map
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

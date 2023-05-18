@@ -1,0 +1,20 @@
+// Base
+p.rights {
+  font-size: 14px;
+  a {
+    color: inherit;
+    &:hover { color: $primary; }
+  }
+}
+
+
+// Spacing
+* + p.rights {
+  margin-top:  20px ;
+}
+
+.row + p.rights {
+  margin-top:  40px ;
+}
+
+

@@ -1,0 +1,32 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pricing
+include ../sections/_header-modern
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Pricing List'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Pricing List
+	section.section.section-xxl.bg-default.text-center
+		.container
+			.title-group
+				h3.fw-regular.text-uppercase Affordable pricing Plans
+				p.text-width-large Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Lorem ipsum dolor Tur adipiscing elit, sed do. semantic;users, seamless beta-test
+
+			include ../includes/_pricing-classic
+	='\n'
+
+	// Page Footer
+	include ../sections/_footer-modern

@@ -1,0 +1,132 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-box-icon
+include ../sections/_header-modern
+include ../components/_ui-inline-subscribe-form
+include ../components/_ui-pricing
+include ../components/_ui-card
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'What We Offer'
+
+block page
+	// Page Header
+	+header-modern
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg'
+	})
+
+	// Section Services
+	section.section.section-xl.bg-default
+		.container
+			.row.row-30.box-ordered
+				.col-sm-6.col-lg-3
+					+box-icon-modern({
+						title: 'Grooming',
+						icon: 'icon-01-50x50.png',
+						text: 'Nibh sit amet commodo nulla facilisi nullam vehicula. Justo laoreet sit amet cursus sit amet dictum.'
+					})
+
+				.col-sm-6.col-lg-3
+					+box-icon-modern({
+						title: 'Pet hotel',
+						icon: 'icon-02-50x42.png',
+						text: 'Arcu non odio euismod lacinia at. Semper risus in hendrerit gravida rutrum. In ante metus dictum at.'
+					})
+
+				.col-sm-6.col-lg-3
+					+box-icon-modern({
+						title: 'Dog daycare',
+						icon: 'icon-03-48x50.png',
+						text: 'Accumsan in nisl nisi scelerisque eu ultrices vitae. Eu non diam phasellus vestibulum sollicitudin. '
+					})
+
+				.col-sm-6.col-lg-3
+					+box-icon-modern({
+						title: 'Dog training',
+						icon: 'icon-04-42x50.png',
+						text: 'Aliquet nec ullamcorper sit amet risus nullam eget felis. Massa sapien faucibus et molestie ultrices. '
+					})
+
+
+	// Subscribe to Our Newsletter
+	+parallax({
+		img: 'bg-cta-1',
+		innerClass: 'section-xxl context-light text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center.align-items-md-end
+			.col-lg-3
+				h3.text-spacing-100.wow.fadeInLeft Stay
+					=' '
+					span.fw-light connected
+				p.wow.fadeInLeft( data-wow-delay='.1s' ) Subscribe to our newsletter
+
+			.col-lg-8.col-xl-9.inset-lg-bottom-10
+				+inline-subscribe-form({
+					mod: 'form-lg rd-form-text-center',
+					button: 'button-lg button-primary'
+				})
+
+	// Pricing List
+	section.section.section-sm.section-first.bg-default
+		.container
+			include ../includes/_pricing-classic
+
+	// Accordions
+	section.section.section-sm.section-last.bg-default
+		.container
+			// Bootstrap collapse
+			#accordion1.card-group-custom.card-group-corporate(role='tablist' aria-multiselectable='false')
+				.row
+					.col-lg-6
+						+card({
+							show: true,
+							parentId: 'accordion1',
+							number: '1',
+							title: 'In what formats are your templates available?'
+						}).card-corporate
+							p Website templates are available in Photoshop and HTML formats. Fonts are included with Photoshop file. In most templates HTML is compatible with Adobe® Dreamweaver® and Microsoft Frontpage®.
+
+						+card({
+							parentId: 'accordion1',
+							number: '2',
+							title: 'Do you provide any scripts with your templates?'
+						}).card-corporate
+							p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+
+						+card({
+							parentId: 'accordion1',
+							number: '3',
+							title: 'What do I receive when I order a template?'
+						}).card-corporate.card-corporate-2
+							p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+					.col-lg-6
+						+card({
+							parentId: 'accordion1',
+							number: '4',
+							title: 'What am I allowed to do with the templates?'
+						}).card-corporate
+							p You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products, modified or unmodified. All products are property of content providing companies and individuals. You are also not allowed to make more than one project using the same template (you have to purchase the same template once more in order to make another project with the same design).
+
+						+card({
+							parentId: 'accordion1',
+							number: '5',
+							title: 'What is a unique/non-unique purchase?'
+						}).card-corporate
+							p Non-exclusive purchase means that other people can buy the template you have chosen some time later. Exclusive or unique purchase guarantees that you are the last person to buy this template. After an exclusive purchase occurs the template is being permanently removed from the sales directory and will never be available to other customers again. Only you and people who bought the template before you will own it.
+
+						+card({
+							parentId: 'accordion1',
+							number: '6',
+							title: 'How can I pay for my order?'
+						}).card-corporate
+							p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+
+	// Page Footer
+	include ../sections/_footer-modern

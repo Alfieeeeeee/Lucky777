@@ -1,0 +1,38 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-countdown
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Coming Soon'
+
+block title
+	title=pageName
+
+block page
+	section.section.section-single.context-dark.bg-image(style='background-image: url(images/bg-404.jpg);')
+		.section-single-inner
+			//-Page Header
+			include ../sections/_section-header-base-transparent
+
+			//- Page Main
+			.section-single-main: .container
+				h3 We’re Getting Ready To Launch In
+
+				// TimeCircles
+				+countdown({
+					from: '2021-03-28',
+					to: '2021-04-29',
+					array: ['Days', 'Hours', 'Minutes', 'Seconds']
+				})
+
+				.rd-mailform-wrap
+					+inline-subscribe-form({
+						mod: 'form-lg',
+						button: 'button-lg button-primary'
+					})
+
+			//-Page Footer
+			include ../sections/_section-footer-base-transparent
